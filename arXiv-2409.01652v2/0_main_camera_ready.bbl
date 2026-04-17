@@ -1,0 +1,795 @@
+\begin{thebibliography}{157}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Kaelbling and Lozano-P{\'e}rez(2010)]{kaelbling2010hierarchical}
+L.~P. Kaelbling and T.~Lozano-P{\'e}rez.
+\newblock Hierarchical planning in the now.
+\newblock In \emph{Workshops at the Twenty-Fourth AAAI Conference on Artificial Intelligence}, 2010.
+
+\bibitem[Driess et~al.(2022)Driess, Ha, Toussaint, and Tedrake]{driess2022learning}
+D.~Driess, J.-S. Ha, M.~Toussaint, and R.~Tedrake.
+\newblock Learning models as functionals of signed-distance fields for manipulation planning.
+\newblock In \emph{Conference on robot learning}, pages 245--255. PMLR, 2022.
+
+\bibitem[Simeonov et~al.(2022)Simeonov, Du, Tagliasacchi, Tenenbaum, Rodriguez, Agrawal, and Sitzmann]{simeonov2022neural}
+A.~Simeonov, Y.~Du, A.~Tagliasacchi, J.~B. Tenenbaum, A.~Rodriguez, P.~Agrawal, and V.~Sitzmann.
+\newblock Neural descriptor fields: Se (3)-equivariant object representations for manipulation.
+\newblock In \emph{2022 International Conference on Robotics and Automation (ICRA)}, pages 6394--6400. IEEE, 2022.
+
+\bibitem[Manuelli et~al.(2019)Manuelli, Gao, Florence, and Tedrake]{manuelli2019kpam}
+L.~Manuelli, W.~Gao, P.~Florence, and R.~Tedrake.
+\newblock kpam: Keypoint affordances for category-level robotic manipulation.
+\newblock In \emph{The International Symposium of Robotics Research}, pages 132--157. Springer, 2019.
+
+\bibitem[Oquab et~al.(2023)Oquab, Darcet, Moutakanni, Vo, Szafraniec, Khalidov, Fernandez, Haziza, Massa, El-Nouby, et~al.]{oquab2023dinov2}
+M.~Oquab, T.~Darcet, T.~Moutakanni, H.~Vo, M.~Szafraniec, V.~Khalidov, P.~Fernandez, D.~Haziza, F.~Massa, A.~El-Nouby, et~al.
+\newblock Dinov2: Learning robust visual features without supervision.
+\newblock \emph{arXiv preprint arXiv:2304.07193}, 2023.
+
+\bibitem[OpenAI(2023)]{openai2023gpt}
+OpenAI.
+\newblock Gpt-4 technical report.
+\newblock \emph{arXiv}, 2023.
+
+\bibitem[Toussaint et~al.(2022)Toussaint, Harris, Ha, Driess, and H{\"o}nig]{toussaint2022sequence}
+M.~Toussaint, J.~Harris, J.-S. Ha, D.~Driess, and W.~H{\"o}nig.
+\newblock Sequence-of-constraints mpc: Reactive timing-optimal control of sequential manipulation.
+\newblock In \emph{2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, pages 13753--13760. IEEE, 2022.
+
+\bibitem[Kaelbling and Lozano-P{\'e}rez(2013)]{kaelbling2013integrated}
+L.~P. Kaelbling and T.~Lozano-P{\'e}rez.
+\newblock Integrated task and motion planning in belief space.
+\newblock \emph{The International Journal of Robotics Research}, 32\penalty0 (9-10):\penalty0 1194--1227, 2013.
+
+\bibitem[Srivastava et~al.(2014)Srivastava, Fang, Riano, Chitnis, Russell, and Abbeel]{srivastava2014combined}
+S.~Srivastava, E.~Fang, L.~Riano, R.~Chitnis, S.~Russell, and P.~Abbeel.
+\newblock Combined task and motion planning through an extensible planner-independent interface layer.
+\newblock In \emph{2014 IEEE international conference on robotics and automation (ICRA)}, 2014.
+
+\bibitem[Byravan and Fox(2017)]{byravan2017se3}
+A.~Byravan and D.~Fox.
+\newblock Se3-nets: Learning rigid body motion using deep neural networks.
+\newblock In \emph{2017 IEEE International Conference on Robotics and Automation (ICRA)}, pages 173--180. IEEE, 2017.
+
+\bibitem[Dantam et~al.(2018)Dantam, Kingston, Chaudhuri, and Kavraki]{dantam2018incremental}
+N.~T. Dantam, Z.~K. Kingston, S.~Chaudhuri, and L.~E. Kavraki.
+\newblock An incremental constraint-based framework for task and motion planning.
+\newblock \emph{The International Journal of Robotics Research}, 37\penalty0 (10):\penalty0 1134--1151, 2018.
+
+\bibitem[Migimatsu and Bohg(2020)]{migimatsu2020object}
+T.~Migimatsu and J.~Bohg.
+\newblock Object-centric task and motion planning in dynamic environments.
+\newblock \emph{IEEE Robotics and Automation Letters}, 5\penalty0 (2):\penalty0 844--851, 2020.
+
+\bibitem[Garrett et~al.(2021)Garrett, Chitnis, Holladay, Kim, Silver, Kaelbling, and Lozano-P{\'e}rez]{garrett2021integrated}
+C.~R. Garrett, R.~Chitnis, R.~Holladay, B.~Kim, T.~Silver, L.~P. Kaelbling, and T.~Lozano-P{\'e}rez.
+\newblock Integrated task and motion planning.
+\newblock \emph{Annual review of control, robotics, and autonomous systems}, 4:\penalty0 265--293, 2021.
+
+\bibitem[Curtis et~al.(2022)Curtis, Fang, Kaelbling, Lozano-P{\'e}rez, and Garrett]{curtis2022long}
+A.~Curtis, X.~Fang, L.~P. Kaelbling, T.~Lozano-P{\'e}rez, and C.~R. Garrett.
+\newblock Long-horizon manipulation of unknown objects via task and motion planning with estimated affordances.
+\newblock In \emph{2022 International Conference on Robotics and Automation (ICRA)}, pages 1940--1946. IEEE, 2022.
+
+\bibitem[Labb\'e et~al.(2022)Labb\'e, Manuelli, Mousavian, Tyree, Birchfield, Tremblay, Carpentier, Aubry, Fox, and Sivic]{labbe2022megapose}
+Y.~Labb\'e, L.~Manuelli, A.~Mousavian, S.~Tyree, S.~Birchfield, J.~Tremblay, J.~Carpentier, M.~Aubry, D.~Fox, and J.~Sivic.
+\newblock Megapose: 6d pose estimation of novel objects via render \& compare.
+\newblock In \emph{Proceedings of the 6th Conference on Robot Learning (CoRL)}, 2022.
+
+\bibitem[Tyree et~al.(2022)Tyree, Tremblay, To, Cheng, Mosier, Smith, and Birchfield]{tyree20226}
+S.~Tyree, J.~Tremblay, T.~To, J.~Cheng, T.~Mosier, J.~Smith, and S.~Birchfield.
+\newblock 6-dof pose estimation of household objects for robotic manipulation: An accessible dataset and benchmark.
+\newblock In \emph{2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, pages 13081--13088. IEEE, 2022.
+
+\bibitem[Pan et~al.(2023)Pan, Okorn, Zhang, Eisner, and Held]{pan2023tax}
+C.~Pan, B.~Okorn, H.~Zhang, B.~Eisner, and D.~Held.
+\newblock Tax-pose: Task-specific cross-pose estimation for robot manipulation.
+\newblock In \emph{Conference on Robot Learning}, pages 1783--1792. PMLR, 2023.
+
+\bibitem[Wen et~al.(2023)Wen, Yang, Kautz, and Birchfield]{wen2023foundationpose}
+B.~Wen, W.~Yang, J.~Kautz, and S.~Birchfield.
+\newblock Foundationpose: Unified 6d pose estimation and tracking of novel objects.
+\newblock \emph{arXiv preprint arXiv:2312.08344}, 2023.
+
+\bibitem[Lenz et~al.(2015)Lenz, Knepper, and Saxena]{lenz2015deepmpc}
+I.~Lenz, R.~A. Knepper, and A.~Saxena.
+\newblock Deepmpc: Learning deep latent features for model predictive control.
+\newblock In \emph{Robotics: Science and Systems}, volume~10. Rome, Italy, 2015.
+
+\bibitem[Chang et~al.(2016)Chang, Ullman, Torralba, and Tenenbaum]{chang2016compositional}
+M.~B. Chang, T.~Ullman, A.~Torralba, and J.~B. Tenenbaum.
+\newblock A compositional object-based approach to learning physical dynamics.
+\newblock \emph{arXiv preprint arXiv:1612.00341}, 2016.
+
+\bibitem[Battaglia et~al.(2016)Battaglia, Pascanu, Lai, Jimenez~Rezende, et~al.]{battaglia2016interaction}
+P.~Battaglia, R.~Pascanu, M.~Lai, D.~Jimenez~Rezende, et~al.
+\newblock Interaction networks for learning about objects, relations and physics.
+\newblock \emph{Advances in neural information processing systems}, 29, 2016.
+
+\bibitem[Sanchez-Gonzalez et~al.(2018)Sanchez-Gonzalez, Heess, Springenberg, Merel, Riedmiller, Hadsell, and Battaglia]{sanchez2018graph}
+A.~Sanchez-Gonzalez, N.~Heess, J.~T. Springenberg, J.~Merel, M.~Riedmiller, R.~Hadsell, and P.~Battaglia.
+\newblock Graph networks as learnable physics engines for inference and control.
+\newblock In \emph{International Conference on Machine Learning}, pages 4470--4479. PMLR, 2018.
+
+\bibitem[Jang et~al.(2018)Jang, Devin, Vanhoucke, and Levine]{jang2018grasp2vec}
+E.~Jang, C.~Devin, V.~Vanhoucke, and S.~Levine.
+\newblock Grasp2vec: Learning object representations from self-supervised grasping.
+\newblock \emph{arXiv preprint arXiv:1811.06964}, 2018.
+
+\bibitem[Tremblay et~al.(2018)Tremblay, To, Sundaralingam, Xiang, Fox, and Birchfield]{tremblay2018deep}
+J.~Tremblay, T.~To, B.~Sundaralingam, Y.~Xiang, D.~Fox, and S.~Birchfield.
+\newblock Deep object pose estimation for semantic robotic grasping of household objects.
+\newblock \emph{arXiv preprint arXiv:1809.10790}, 2018.
+
+\bibitem[Xu et~al.(2019)Xu, Wu, Zeng, Tenenbaum, and Song]{xu2019densephysnet}
+Z.~Xu, J.~Wu, A.~Zeng, J.~B. Tenenbaum, and S.~Song.
+\newblock Densephysnet: Learning dense physical object representations via multi-step dynamic interactions.
+\newblock \emph{arXiv preprint arXiv:1906.03853}, 2019.
+
+\bibitem[Mao et~al.(2019)Mao, Gan, Kohli, Tenenbaum, and Wu]{mao2019neuro}
+J.~Mao, C.~Gan, P.~Kohli, J.~B. Tenenbaum, and J.~Wu.
+\newblock The neuro-symbolic concept learner: Interpreting scenes, words, and sentences from natural supervision.
+\newblock \emph{arXiv preprint arXiv:1904.12584}, 2019.
+
+\bibitem[Burgess et~al.(2019)Burgess, Matthey, Watters, Kabra, Higgins, Botvinick, and Lerchner]{burgess2019monet}
+C.~P. Burgess, L.~Matthey, N.~Watters, R.~Kabra, I.~Higgins, M.~Botvinick, and A.~Lerchner.
+\newblock Monet: Unsupervised scene decomposition and representation.
+\newblock \emph{arXiv preprint arXiv:1901.11390}, 2019.
+
+\bibitem[Hewing et~al.(2020)Hewing, Wabersich, Menner, and Zeilinger]{hewing2020learning}
+L.~Hewing, K.~P. Wabersich, M.~Menner, and M.~N. Zeilinger.
+\newblock Learning-based model predictive control: Toward safe learning in control.
+\newblock \emph{Annual Review of Control, Robotics, and Autonomous Systems}, 3:\penalty0 269--296, 2020.
+
+\bibitem[Locatello et~al.(2020)Locatello, Weissenborn, Unterthiner, Mahendran, Heigold, Uszkoreit, Dosovitskiy, and Kipf]{locatello2020object}
+F.~Locatello, D.~Weissenborn, T.~Unterthiner, A.~Mahendran, G.~Heigold, J.~Uszkoreit, A.~Dosovitskiy, and T.~Kipf.
+\newblock Object-centric learning with slot attention.
+\newblock \emph{Advances in neural information processing systems}, 33:\penalty0 11525--11538, 2020.
+
+\bibitem[Heravi et~al.(2023)Heravi, Wahid, Lynch, Florence, Armstrong, Tompson, Sermanet, Bohg, and Dwibedi]{heravi2023visuomotor}
+N.~Heravi, A.~Wahid, C.~Lynch, P.~Florence, T.~Armstrong, J.~Tompson, P.~Sermanet, J.~Bohg, and D.~Dwibedi.
+\newblock Visuomotor control in multi-object scenes using object-aware representations.
+\newblock In \emph{2023 IEEE International Conference on Robotics and Automation (ICRA)}, pages 9515--9522. IEEE, 2023.
+
+\bibitem[Zhu et~al.(2023)Zhu, Jiang, Stone, and Zhu]{zhu2023learning}
+Y.~Zhu, Z.~Jiang, P.~Stone, and Y.~Zhu.
+\newblock Learning generalizable manipulation policies with object-centric 3d representations.
+\newblock \emph{arXiv preprint arXiv:2310.14386}, 2023.
+
+\bibitem[Yuan et~al.(2022)Yuan, Paxton, Desingh, and Fox]{yuan2022sornet}
+W.~Yuan, C.~Paxton, K.~Desingh, and D.~Fox.
+\newblock Sornet: Spatial object-centric representations for sequential manipulation.
+\newblock In \emph{Conference on Robot Learning}, pages 148--157. PMLR, 2022.
+
+\bibitem[Cheng et~al.(2023)Cheng, Garrett, Mandlekar, and Xu]{cheng2023nod}
+S.~Cheng, C.~Garrett, A.~Mandlekar, and D.~Xu.
+\newblock Nod-tamp: Multi-step manipulation planning with neural object descriptors.
+\newblock \emph{arXiv preprint arXiv:2311.01530}, 2023.
+
+\bibitem[Hsu et~al.(2024)Hsu, Mao, Tenenbaum, and Wu]{hsu2024s}
+J.~Hsu, J.~Mao, J.~Tenenbaum, and J.~Wu.
+\newblock What’s left? concept grounding with logic-enhanced foundation models.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem[Li et~al.(2018)Li, Wu, Tedrake, Tenenbaum, and Torralba]{li2018learning}
+Y.~Li, J.~Wu, R.~Tedrake, J.~B. Tenenbaum, and A.~Torralba.
+\newblock Learning particle dynamics for manipulating rigid bodies, deformable objects, and fluids.
+\newblock \emph{arXiv preprint arXiv:1810.01566}, 2018.
+
+\bibitem[Lin et~al.(2022)Lin, Qi, Zhang, Huang, Fragkiadaki, Li, Gan, and Held]{lin2022planning}
+X.~Lin, C.~Qi, Y.~Zhang, Z.~Huang, K.~Fragkiadaki, Y.~Li, C.~Gan, and D.~Held.
+\newblock Planning with spatial-temporal abstraction from point clouds for deformable object manipulation.
+\newblock \emph{arXiv preprint arXiv:2210.15751}, 2022.
+
+\bibitem[Wang et~al.(2023)Wang, Li, Driggs-Campbell, Fei-Fei, and Wu]{wang2023dynamic}
+Y.~Wang, Y.~Li, K.~Driggs-Campbell, L.~Fei-Fei, and J.~Wu.
+\newblock Dynamic-resolution model learning for object pile manipulation.
+\newblock \emph{arXiv preprint arXiv:2306.16700}, 2023.
+
+\bibitem[Shi et~al.(2023)Shi, Xu, Clarke, Li, and Wu]{shi2023robocook}
+H.~Shi, H.~Xu, S.~Clarke, Y.~Li, and J.~Wu.
+\newblock Robocook: Long-horizon elasto-plastic object manipulation with diverse tools.
+\newblock \emph{arXiv preprint arXiv:2306.14447}, 2023.
+
+\bibitem[Lin et~al.(2022)Lin, Wang, Huang, and Held]{lin2022learning}
+X.~Lin, Y.~Wang, Z.~Huang, and D.~Held.
+\newblock Learning visible connectivity dynamics for cloth smoothing.
+\newblock In \emph{Conference on Robot Learning}, pages 256--266. PMLR, 2022.
+
+\bibitem[Abou-Chakra et~al.(2024)Abou-Chakra, Rana, Dayoub, and S{\"u}nderhauf]{abou2024physically}
+J.~Abou-Chakra, K.~Rana, F.~Dayoub, and N.~S{\"u}nderhauf.
+\newblock Physically embodied gaussian splatting: A realtime correctable world model for robotics.
+\newblock \emph{arXiv preprint arXiv:2406.10788}, 2024.
+
+\bibitem[Bauer et~al.(2024)Bauer, Xu, and Song]{bauer2024doughnet}
+D.~Bauer, Z.~Xu, and S.~Song.
+\newblock Doughnet: A visual predictive model for topological manipulation of deformable objects.
+\newblock \emph{arXiv preprint arXiv:2404.12524}, 2024.
+
+\bibitem[Schmidt et~al.(2016)Schmidt, Newcombe, and Fox]{schmidt2016self}
+T.~Schmidt, R.~Newcombe, and D.~Fox.
+\newblock Self-supervised visual descriptor learning for dense correspondence.
+\newblock \emph{IEEE Robotics and Automation Letters}, 2\penalty0 (2):\penalty0 420--427, 2016.
+
+\bibitem[Florence et~al.(2018)Florence, Manuelli, and Tedrake]{florence2018dense}
+P.~R. Florence, L.~Manuelli, and R.~Tedrake.
+\newblock Dense object nets: Learning dense visual object descriptors by and for robotic manipulation.
+\newblock \emph{arXiv preprint arXiv:1806.08756}, 2018.
+
+\bibitem[Kulkarni et~al.(2019)Kulkarni, Gupta, Ionescu, Borgeaud, Reynolds, Zisserman, and Mnih]{kulkarni2019unsupervised}
+T.~D. Kulkarni, A.~Gupta, C.~Ionescu, S.~Borgeaud, M.~Reynolds, A.~Zisserman, and V.~Mnih.
+\newblock Unsupervised learning of object keypoints for perception and control.
+\newblock \emph{Advances in neural information processing systems}, 32, 2019.
+
+\bibitem[Qin et~al.(2020)Qin, Fang, Zhu, Fei-Fei, and Savarese]{qin2020keto}
+Z.~Qin, K.~Fang, Y.~Zhu, L.~Fei-Fei, and S.~Savarese.
+\newblock Keto: Learning keypoint representations for tool manipulation.
+\newblock In \emph{2020 IEEE International Conference on Robotics and Automation (ICRA)}, pages 7278--7285. IEEE, 2020.
+
+\bibitem[Sundaresan et~al.(2020)Sundaresan, Grannen, Thananjeyan, Balakrishna, Laskey, Stone, Gonzalez, and Goldberg]{sundaresan2020learning}
+P.~Sundaresan, J.~Grannen, B.~Thananjeyan, A.~Balakrishna, M.~Laskey, K.~Stone, J.~E. Gonzalez, and K.~Goldberg.
+\newblock Learning rope manipulation policies using dense object descriptors trained on synthetic depth data.
+\newblock In \emph{2020 IEEE International Conference on Robotics and Automation (ICRA)}, pages 9411--9418. IEEE, 2020.
+
+\bibitem[Manuelli et~al.(2020)Manuelli, Li, Florence, and Tedrake]{manuelli2020keypoints}
+L.~Manuelli, Y.~Li, P.~Florence, and R.~Tedrake.
+\newblock Keypoints into the future: Self-supervised correspondence in model-based reinforcement learning.
+\newblock \emph{arXiv preprint arXiv:2009.05085}, 2020.
+
+\bibitem[Chen et~al.(2021)Chen, Abbeel, and Pathak]{chen2021unsupervised}
+B.~Chen, P.~Abbeel, and D.~Pathak.
+\newblock Unsupervised learning of visual 3d keypoints for control.
+\newblock In \emph{International Conference on Machine Learning}, pages 1539--1549. PMLR, 2021.
+
+\bibitem[Simeonov et~al.(2023)Simeonov, Du, Lin, Garcia, Kaelbling, Lozano-P{\'e}rez, and Agrawal]{simeonov2023se}
+A.~Simeonov, Y.~Du, Y.-C. Lin, A.~R. Garcia, L.~P. Kaelbling, T.~Lozano-P{\'e}rez, and P.~Agrawal.
+\newblock Se (3)-equivariant relational rearrangement with neural descriptor fields.
+\newblock In \emph{Conference on Robot Learning}, pages 835--846. PMLR, 2023.
+
+\bibitem[Vecerik et~al.(2023)Vecerik, Doersch, Yang, Davchev, Aytar, Zhou, Hadsell, Agapito, and Scholz]{vecerik2023robotap}
+M.~Vecerik, C.~Doersch, Y.~Yang, T.~Davchev, Y.~Aytar, G.~Zhou, R.~Hadsell, L.~Agapito, and J.~Scholz.
+\newblock Robotap: Tracking arbitrary points for few-shot visual imitation.
+\newblock \emph{arXiv preprint arXiv:2308.15975}, 2023.
+
+\bibitem[Chun et~al.(2023)Chun, Du, Simeonov, Lozano-Perez, and Kaelbling]{chun2023local}
+E.~Chun, Y.~Du, A.~Simeonov, T.~Lozano-Perez, and L.~Kaelbling.
+\newblock Local neural descriptor fields: Locally conditioned object representations for manipulation.
+\newblock In \emph{2023 IEEE International Conference on Robotics and Automation (ICRA)}, pages 1830--1836. IEEE, 2023.
+
+\bibitem[Bahl et~al.(2023)Bahl, Mendonca, Chen, Jain, and Pathak]{bahl2023affordances}
+S.~Bahl, R.~Mendonca, L.~Chen, U.~Jain, and D.~Pathak.
+\newblock Affordances from human videos as a versatile representation for robotics.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 13778--13790, 2023.
+
+\bibitem[Wen et~al.(2023)Wen, Lin, So, Chen, Dou, Gao, and Abbeel]{wen2023any}
+C.~Wen, X.~Lin, J.~So, K.~Chen, Q.~Dou, Y.~Gao, and P.~Abbeel.
+\newblock Any-point trajectory modeling for policy learning.
+\newblock \emph{arXiv preprint arXiv:2401.00025}, 2023.
+
+\bibitem[Bharadhwaj et~al.(2024)Bharadhwaj, Mottaghi, Gupta, and Tulsiani]{bharadhwaj2024track2act}
+H.~Bharadhwaj, R.~Mottaghi, A.~Gupta, and S.~Tulsiani.
+\newblock Track2act: Predicting point tracks from internet videos enables diverse zero-shot robot manipulation, 2024.
+
+\bibitem[Kingston et~al.(2018)Kingston, Moll, and Kavraki]{kingston2018sampling}
+Z.~Kingston, M.~Moll, and L.~E. Kavraki.
+\newblock Sampling-based methods for motion planning with constraints.
+\newblock \emph{Annual review of control, robotics, and autonomous systems}, 1:\penalty0 159--185, 2018.
+
+\bibitem[Ratliff et~al.(2009)Ratliff, Zucker, Bagnell, and Srinivasa]{ratliff2009chomp}
+N.~Ratliff, M.~Zucker, J.~A. Bagnell, and S.~Srinivasa.
+\newblock Chomp: Gradient optimization techniques for efficient motion planning.
+\newblock In \emph{2009 IEEE international conference on robotics and automation}, pages 489--494. IEEE, 2009.
+
+\bibitem[Schulman et~al.(2014)Schulman, Duan, Ho, Lee, Awwal, Bradlow, Pan, Patil, Goldberg, and Abbeel]{schulman2014motion}
+J.~Schulman, Y.~Duan, J.~Ho, A.~Lee, I.~Awwal, H.~Bradlow, J.~Pan, S.~Patil, K.~Goldberg, and P.~Abbeel.
+\newblock Motion planning with sequential convex optimization and convex collision checking.
+\newblock \emph{The International Journal of Robotics Research}, 33\penalty0 (9):\penalty0 1251--1270, 2014.
+
+\bibitem[Sundaralingam et~al.(2023)Sundaralingam, Hari, Fishman, Garrett, Van~Wyk, Blukis, Millane, Oleynikova, Handa, Ramos, et~al.]{sundaralingam2023curobo}
+B.~Sundaralingam, S.~K.~S. Hari, A.~Fishman, C.~Garrett, K.~Van~Wyk, V.~Blukis, A.~Millane, H.~Oleynikova, A.~Handa, F.~Ramos, et~al.
+\newblock Curobo: Parallelized collision-free robot motion generation.
+\newblock In \emph{2023 IEEE International Conference on Robotics and Automation (ICRA)}, pages 8112--8119. IEEE, 2023.
+
+\bibitem[Marcucci et~al.(2024)Marcucci, Umenberger, Parrilo, and Tedrake]{marcucci2024shortest}
+T.~Marcucci, J.~Umenberger, P.~Parrilo, and R.~Tedrake.
+\newblock Shortest paths in graphs of convex sets.
+\newblock \emph{SIAM Journal on Optimization}, 34\penalty0 (1):\penalty0 507--532, 2024.
+
+\bibitem[Ratliff et~al.(2018)Ratliff, Issac, Kappler, Birchfield, and Fox]{ratliff2018riemannian}
+N.~D. Ratliff, J.~Issac, D.~Kappler, S.~Birchfield, and D.~Fox.
+\newblock Riemannian motion policies.
+\newblock \emph{arXiv preprint arXiv:1801.02854}, 2018.
+
+\bibitem[Posa et~al.(2016)Posa, Kuindersma, and Tedrake]{posa2016optimization}
+M.~Posa, S.~Kuindersma, and R.~Tedrake.
+\newblock Optimization and stabilization of trajectories for constrained dynamical systems.
+\newblock In \emph{2016 IEEE International Conference on Robotics and Automation (ICRA)}, pages 1366--1373. IEEE, 2016.
+
+\bibitem[Mordatch et~al.(2012{\natexlab{a}})Mordatch, Todorov, and Popovi{\'c}]{mordatch2012discovery}
+I.~Mordatch, E.~Todorov, and Z.~Popovi{\'c}.
+\newblock Discovery of complex behaviors through contact-invariant optimization.
+\newblock \emph{ACM Transactions on Graphics (ToG)}, 31\penalty0 (4):\penalty0 1--8, 2012{\natexlab{a}}.
+
+\bibitem[Mordatch et~al.(2012{\natexlab{b}})Mordatch, Popovi{\'c}, and Todorov]{mordatch2012contact}
+I.~Mordatch, Z.~Popovi{\'c}, and E.~Todorov.
+\newblock Contact-invariant optimization for hand manipulation.
+\newblock In \emph{Proceedings of the ACM SIGGRAPH/Eurographics symposium on computer animation}, pages 137--144, 2012{\natexlab{b}}.
+
+\bibitem[Posa et~al.(2014)Posa, Cantu, and Tedrake]{posa2014direct}
+M.~Posa, C.~Cantu, and R.~Tedrake.
+\newblock A direct method for trajectory optimization of rigid bodies through contact.
+\newblock \emph{The International Journal of Robotics Research}, 33\penalty0 (1):\penalty0 69--81, 2014.
+
+\bibitem[Howell et~al.(2022)Howell, Gileadi, Tunyasuvunakool, Zakka, Erez, and Tassa]{howell2022predictive}
+T.~Howell, N.~Gileadi, S.~Tunyasuvunakool, K.~Zakka, T.~Erez, and Y.~Tassa.
+\newblock Predictive sampling: Real-time behaviour synthesis with mujoco.
+\newblock \emph{arXiv preprint arXiv:2212.00541}, 2022.
+
+\bibitem[Liu et~al.(2024)Liu, Zhou, He, Marcucci, Li, Wu, and Li]{liu2024model}
+Z.~Liu, G.~Zhou, J.~He, T.~Marcucci, F.-F. Li, J.~Wu, and Y.~Li.
+\newblock Model-based control with sparse neural dynamics.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2024.
+
+\bibitem[Lynch and Mason(1996)]{lynch1996stable}
+K.~M. Lynch and M.~T. Mason.
+\newblock Stable pushing: Mechanics, controllability, and planning.
+\newblock \emph{The international journal of robotics research}, 15\penalty0 (6):\penalty0 533--556, 1996.
+
+\bibitem[Hou et~al.(2018)Hou, Jia, and Mason]{hou2018fast}
+Y.~Hou, Z.~Jia, and M.~T. Mason.
+\newblock Fast planning for 3d any-pose-reorienting using pivoting.
+\newblock In \emph{2018 IEEE International Conference on Robotics and Automation (ICRA)}, pages 1631--1638. IEEE, 2018.
+
+\bibitem[Sleiman et~al.(2023)Sleiman, Farshidian, and Hutter]{sleiman2023versatile}
+J.-P. Sleiman, F.~Farshidian, and M.~Hutter.
+\newblock Versatile multicontact planning and control for legged loco-manipulation.
+\newblock \emph{Science Robotics}, 8\penalty0 (81):\penalty0 eadg5014, 2023.
+
+\bibitem[Yang and Posa(2024)]{yang2024dynamic}
+W.~Yang and M.~Posa.
+\newblock Dynamic on-palm manipulation via controlled sliding.
+\newblock \emph{arXiv preprint arXiv:2405.08731}, 2024.
+
+\bibitem[Graesdal et~al.(2024)Graesdal, Chia, Marcucci, Morozov, Amice, Parrilo, and Tedrake]{graesdal2024towards}
+B.~P. Graesdal, S.~Y. Chia, T.~Marcucci, S.~Morozov, A.~Amice, P.~A. Parrilo, and R.~Tedrake.
+\newblock Towards tight convex relaxations for contact-rich manipulation.
+\newblock \emph{arXiv preprint arXiv:2402.10312}, 2024.
+
+\bibitem[Yunt and Glocker(2006)]{yunt2006trajectory}
+K.~Yunt and C.~Glocker.
+\newblock Trajectory optimization of mechanical hybrid systems using sumt.
+\newblock In \emph{9th IEEE International Workshop on Advanced Motion Control, 2006.}, pages 665--671. IEEE, 2006.
+
+\bibitem[Yunt and Glocker(2007)]{yunt2007combined}
+K.~Yunt and C.~Glocker.
+\newblock A combined continuation and penalty method for the determination of optimal hybrid mechanical trajectories.
+\newblock In \emph{Iutam Symposium on Dynamics and Control of Nonlinear Systems with Uncertainty: Proceedings of the IUTAM Symposium held in Nanjing, China, September 18-22, 2006}, pages 187--196. Springer, 2007.
+
+\bibitem[Yunt(2011)]{yunt2011augmented}
+K.~Yunt.
+\newblock An augmented lagrangian based shooting method for the optimal trajectory generation of switching lagrangian systems.
+\newblock \emph{Dynamics of Continuous, Discrete and Impulsive Systems Series B: Applications and Algorithms}, 18\penalty0 (5):\penalty0 615--645, 2011.
+
+\bibitem[Lagriffoul et~al.(2012)Lagriffoul, Dimitrov, Saffiotti, and Karlsson]{lagriffoul2012constraint}
+F.~Lagriffoul, D.~Dimitrov, A.~Saffiotti, and L.~Karlsson.
+\newblock Constraint propagation on interval bounds for dealing with geometric backtracking.
+\newblock In \emph{2012 IEEE/RSJ International Conference on Intelligent Robots and Systems}, pages 957--964. IEEE, 2012.
+
+\bibitem[Lagriffoul et~al.(2014)Lagriffoul, Dimitrov, Bidot, Saffiotti, and Karlsson]{lagriffoul2014efficiently}
+F.~Lagriffoul, D.~Dimitrov, J.~Bidot, A.~Saffiotti, and L.~Karlsson.
+\newblock Efficiently combining task and motion planning using geometric constraints.
+\newblock \emph{The International Journal of Robotics Research}, 33\penalty0 (14):\penalty0 1726--1747, 2014.
+
+\bibitem[Lozano-P{\'e}rez and Kaelbling(2014)]{lozano2014constraint}
+T.~Lozano-P{\'e}rez and L.~P. Kaelbling.
+\newblock A constraint-based method for solving sequential manipulation planning problems.
+\newblock In \emph{2014 IEEE/RSJ International Conference on Intelligent Robots and Systems}, pages 3684--3691. IEEE, 2014.
+
+\bibitem[Yang et~al.(2023)Yang, Mao, Du, Wu, Tenenbaum, Lozano-P{\'e}rez, and Kaelbling]{yang2023compositional}
+Z.~Yang, J.~Mao, Y.~Du, J.~Wu, J.~B. Tenenbaum, T.~Lozano-P{\'e}rez, and L.~P. Kaelbling.
+\newblock Compositional diffusion-based continuous constraint solvers.
+\newblock \emph{arXiv preprint arXiv:2309.00966}, 2023.
+
+\bibitem[Silver et~al.(2021)Silver, Chitnis, Tenenbaum, Kaelbling, and Lozano-P{\'e}rez]{silver2021learning}
+T.~Silver, R.~Chitnis, J.~Tenenbaum, L.~P. Kaelbling, and T.~Lozano-P{\'e}rez.
+\newblock Learning symbolic operators for task and motion planning.
+\newblock In \emph{2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, pages 3182--3189. IEEE, 2021.
+
+\bibitem[Vu et~al.(2024)Vu, Migimatsu, and Bohg]{vu2024coast}
+B.~Vu, T.~Migimatsu, and J.~Bohg.
+\newblock Coast: Constraints and streams for task and motion planning.
+\newblock \emph{arXiv preprint arXiv:2405.08572}, 2024.
+
+\bibitem[Toussaint(2015)]{toussaint2015logic}
+M.~Toussaint.
+\newblock Logic-geometric programming: An optimization-based approach to combined task and motion planning.
+\newblock In \emph{Twenty-Fourth International Joint Conference on Artificial Intelligence}, 2015.
+
+\bibitem[Toussaint and Lopes(2017)]{toussaint2017multi}
+M.~Toussaint and M.~Lopes.
+\newblock Multi-bound tree search for logic-geometric programming in cooperative manipulation domains.
+\newblock In \emph{2017 IEEE International Conference on Robotics and Automation (ICRA)}, pages 4044--4051. IEEE, 2017.
+
+\bibitem[Toussaint et~al.(2018)Toussaint, Allen, Smith, and Tenenbaum]{toussaint2018differentiable}
+M.~A. Toussaint, K.~R. Allen, K.~A. Smith, and J.~B. Tenenbaum.
+\newblock Differentiable physics and stable modes for tool-use and manipulation planning.
+\newblock \emph{Robotics: Science and Systems Foundation}, 2018.
+
+\bibitem[Ha et~al.(2020)Ha, Driess, and Toussaint]{ha2020probabilistic}
+J.-S. Ha, D.~Driess, and M.~Toussaint.
+\newblock A probabilistic framework for constrained manipulations and task and motion planning under uncertainty.
+\newblock In \emph{2020 IEEE International Conference on Robotics and Automation (ICRA)}, pages 6745--6751. IEEE, 2020.
+
+\bibitem[Xue et~al.(2023)Xue, Razmjoo, and Calinon]{xue2023d}
+T.~Xue, A.~Razmjoo, and S.~Calinon.
+\newblock D-lgp: Dynamic logicgeometric program for reactive task and motion planning.
+\newblock \emph{arXiv preprint arXiv:2312.02731}, 2023.
+
+\bibitem[Driess et~al.(2020)Driess, Oguz, Ha, and Toussaint]{driess2020deep}
+D.~Driess, O.~Oguz, J.-S. Ha, and M.~Toussaint.
+\newblock Deep visual heuristics: Learning feasibility of mixed-integer programs for manipulation planning.
+\newblock In \emph{2020 IEEE international conference on robotics and automation (ICRA)}, pages 9563--9569. IEEE, 2020.
+
+\bibitem[Sutanto et~al.(2021)Sutanto, Fern{\'a}ndez, Englert, Ramachandran, and Sukhatme]{sutanto2021learning}
+G.~Sutanto, I.~R. Fern{\'a}ndez, P.~Englert, R.~K. Ramachandran, and G.~Sukhatme.
+\newblock Learning equality constraints for motion planning on manifolds.
+\newblock In \emph{Conference on Robot Learning}, pages 2292--2305. PMLR, 2021.
+
+\bibitem[Yang et~al.(2022)Yang, Garrett, Lozano-P{\'e}rez, Kaelbling, and Fox]{yang2022sequence}
+Z.~Yang, C.~R. Garrett, T.~Lozano-P{\'e}rez, L.~Kaelbling, and D.~Fox.
+\newblock Sequence-based plan feasibility prediction for efficient task and motion planning.
+\newblock \emph{arXiv preprint arXiv:2211.01576}, 2022.
+
+\bibitem[Camps et~al.(2022)Camps, Dyro, Pavone, and Schwager]{camps2022learning}
+G.~S. Camps, R.~Dyro, M.~Pavone, and M.~Schwager.
+\newblock Learning deep sdf maps online for robot navigation and exploration.
+\newblock \emph{arXiv preprint arXiv:2207.10782}, 2022.
+
+\bibitem[Hu et~al.(2023)Hu, Xie, Jain, Francis, Patrikar, Keetha, Kim, Xie, Zhang, Zhao, et~al.]{hu2023toward}
+Y.~Hu, Q.~Xie, V.~Jain, J.~Francis, J.~Patrikar, N.~Keetha, S.~Kim, Y.~Xie, T.~Zhang, Z.~Zhao, et~al.
+\newblock Toward general-purpose robots via foundation models: A survey and meta-analysis.
+\newblock \emph{arXiv preprint arXiv:2312.08782}, 2023.
+
+\bibitem[Firoozi et~al.(2023)Firoozi, Tucker, Tian, Majumdar, Sun, Liu, Zhu, Song, Kapoor, Hausman, et~al.]{firoozi2023foundation}
+R.~Firoozi, J.~Tucker, S.~Tian, A.~Majumdar, J.~Sun, W.~Liu, Y.~Zhu, S.~Song, A.~Kapoor, K.~Hausman, et~al.
+\newblock Foundation models in robotics: Applications, challenges, and the future.
+\newblock \emph{arXiv preprint arXiv:2312.07843}, 2023.
+
+\bibitem[Kawaharazuka et~al.(2024)Kawaharazuka, Matsushima, Gambardella, Guo, Paxton, and Zeng]{kawaharazuka2024real}
+K.~Kawaharazuka, T.~Matsushima, A.~Gambardella, J.~Guo, C.~Paxton, and A.~Zeng.
+\newblock Real-world robot applications of foundation models: A review.
+\newblock \emph{arXiv preprint arXiv:2402.05741}, 2024.
+
+\bibitem[Yang et~al.(2023)Yang, Nachum, Du, Wei, Abbeel, and Schuurmans]{yang2023foundation}
+S.~Yang, O.~Nachum, Y.~Du, J.~Wei, P.~Abbeel, and D.~Schuurmans.
+\newblock Foundation models for decision making: Problems, methods, and opportunities.
+\newblock \emph{arXiv preprint arXiv:2303.04129}, 2023.
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal, Sastry, Askell, Mishkin, Clark, et~al.]{radford2021learning}
+A.~Radford, J.~W. Kim, C.~Hallacy, A.~Ramesh, G.~Goh, S.~Agarwal, G.~Sastry, A.~Askell, P.~Mishkin, J.~Clark, et~al.
+\newblock Learning transferable visual models from natural language supervision.
+\newblock In \emph{International Conference on Machine Learning}, pages 8748--8763. PMLR, 2021.
+
+\bibitem[Ramesh et~al.(2021)Ramesh, Pavlov, Goh, Gray, Voss, Radford, Chen, and Sutskever]{ramesh2021zero}
+A.~Ramesh, M.~Pavlov, G.~Goh, S.~Gray, C.~Voss, A.~Radford, M.~Chen, and I.~Sutskever.
+\newblock Zero-shot text-to-image generation.
+\newblock In \emph{International conference on machine learning}, pages 8821--8831. Pmlr, 2021.
+
+\bibitem[Li et~al.(2022)Li, Li, Xiong, and Hoi]{li2022blip}
+J.~Li, D.~Li, C.~Xiong, and S.~Hoi.
+\newblock Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation.
+\newblock In \emph{International conference on machine learning}, pages 12888--12900. PMLR, 2022.
+
+\bibitem[Achiam et~al.(2023)Achiam, Adler, Agarwal, Ahmad, Akkaya, Aleman, Almeida, Altenschmidt, Altman, Anadkat, et~al.]{achiam2023gpt}
+J.~Achiam, S.~Adler, S.~Agarwal, L.~Ahmad, I.~Akkaya, F.~L. Aleman, D.~Almeida, J.~Altenschmidt, S.~Altman, S.~Anadkat, et~al.
+\newblock Gpt-4 technical report.
+\newblock \emph{arXiv preprint arXiv:2303.08774}, 2023.
+
+\bibitem[Li et~al.(2023)Li, Li, Savarese, and Hoi]{li2023blip}
+J.~Li, D.~Li, S.~Savarese, and S.~Hoi.
+\newblock Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models.
+\newblock \emph{arXiv preprint arXiv:2301.12597}, 2023.
+
+\bibitem[Huang et~al.(2024)Huang, Lin, Hu, Wang, and Gao]{huang2024copa}
+H.~Huang, F.~Lin, Y.~Hu, S.~Wang, and Y.~Gao.
+\newblock Copa: General robotic manipulation through spatial constraints of parts with foundation models.
+\newblock \emph{arXiv preprint arXiv:2403.08248}, 2024.
+
+\bibitem[Liu et~al.(2024)Liu, Fang, Abbeel, and Levine]{liu2024moka}
+F.~Liu, K.~Fang, P.~Abbeel, and S.~Levine.
+\newblock Moka: Open-vocabulary robotic manipulation through mark-based visual prompting.
+\newblock \emph{arXiv preprint arXiv:2403.03174}, 2024.
+
+\bibitem[Nasiriany et~al.(2024)Nasiriany, Xia, Yu, Xiao, Liang, Dasgupta, Xie, Driess, Wahid, Xu, et~al.]{nasiriany2024pivot}
+S.~Nasiriany, F.~Xia, W.~Yu, T.~Xiao, J.~Liang, I.~Dasgupta, A.~Xie, D.~Driess, A.~Wahid, Z.~Xu, et~al.
+\newblock Pivot: Iterative visual prompting elicits actionable knowledge for vlms.
+\newblock \emph{arXiv preprint arXiv:2402.07872}, 2024.
+
+\bibitem[Hu et~al.(2023)Hu, Lin, Zhang, Yi, and Gao]{hu2023look}
+Y.~Hu, F.~Lin, T.~Zhang, L.~Yi, and Y.~Gao.
+\newblock Look before you leap: Unveiling the power of gpt-4v in robotic vision-language planning.
+\newblock \emph{arXiv preprint arXiv:2311.17842}, 2023.
+
+\bibitem[Du et~al.(2023)Du, Yang, Florence, Xia, Wahid, Ichter, Sermanet, Yu, Abbeel, Tenenbaum, et~al.]{du2023video}
+Y.~Du, M.~Yang, P.~Florence, F.~Xia, A.~Wahid, B.~Ichter, P.~Sermanet, T.~Yu, P.~Abbeel, J.~B. Tenenbaum, et~al.
+\newblock Video language planning.
+\newblock \emph{arXiv preprint arXiv:2310.10625}, 2023.
+
+\bibitem[Hong et~al.(2023)Hong, Zhen, Chen, Zheng, Du, Chen, and Gan]{hong20233d}
+Y.~Hong, H.~Zhen, P.~Chen, S.~Zheng, Y.~Du, Z.~Chen, and C.~Gan.
+\newblock 3d-llm: Injecting the 3d world into large language models.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36:\penalty0 20482--20494, 2023.
+
+\bibitem[Chen et~al.(2024)Chen, Xu, Kirmani, Ichter, Sadigh, Guibas, and Xia]{chen2024spatialvlm}
+B.~Chen, Z.~Xu, S.~Kirmani, B.~Ichter, D.~Sadigh, L.~Guibas, and F.~Xia.
+\newblock Spatialvlm: Endowing vision-language models with spatial reasoning capabilities.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 14455--14465, 2024.
+
+\bibitem[Huang et~al.(2023)Huang, Wang, Zhang, Li, Wu, and Fei-Fei]{huang2023voxposer}
+W.~Huang, C.~Wang, R.~Zhang, Y.~Li, J.~Wu, and L.~Fei-Fei.
+\newblock Voxposer: Composable 3d value maps for robotic manipulation with language models.
+\newblock \emph{arXiv preprint arXiv:2307.05973}, 2023.
+
+\bibitem[Brohan et~al.(2023)Brohan, Brown, Carbajal, Chebotar, Chen, Choromanski, Ding, Driess, Dubey, Finn, et~al.]{brohan2023rt}
+A.~Brohan, N.~Brown, J.~Carbajal, Y.~Chebotar, X.~Chen, K.~Choromanski, T.~Ding, D.~Driess, A.~Dubey, C.~Finn, et~al.
+\newblock Rt-2: Vision-language-action models transfer web knowledge to robotic control.
+\newblock \emph{arXiv preprint arXiv:2307.15818}, 2023.
+
+\bibitem[Gao et~al.(2023)Gao, Sarkar, Xia, Xiao, Wu, Ichter, Majumdar, and Sadigh]{gao2023physically}
+J.~Gao, B.~Sarkar, F.~Xia, T.~Xiao, J.~Wu, B.~Ichter, A.~Majumdar, and D.~Sadigh.
+\newblock Physically grounded vision-language models for robotic manipulation.
+\newblock \emph{arXiv preprint arXiv:2309.02561}, 2023.
+
+\bibitem[Wang et~al.(2024)Wang, Wang, Mao, Hagenow, and Shah]{wang2024grounding}
+Y.~Wang, T.-H. Wang, J.~Mao, M.~Hagenow, and J.~Shah.
+\newblock Grounding language plans in demonstrations through counterfactual perturbations.
+\newblock \emph{arXiv preprint arXiv:2403.17124}, 2024.
+
+\bibitem[Hsu et~al.(2023)Hsu, Mao, and Wu]{hsu2023ns3d}
+J.~Hsu, J.~Mao, and J.~Wu.
+\newblock Ns3d: Neuro-symbolic grounding of 3d objects and relations.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 2614--2623, 2023.
+
+\bibitem[Gao et~al.(2024)Gao, Sarkar, Xia, Xiao, Wu, Ichter, Majumdar, and Sadigh]{gao2024physically}
+J.~Gao, B.~Sarkar, F.~Xia, T.~Xiao, J.~Wu, B.~Ichter, A.~Majumdar, and D.~Sadigh.
+\newblock Physically grounded vision-language models for robotic manipulation.
+\newblock In \emph{2024 IEEE International Conference on Robotics and Automation (ICRA)}, pages 12462--12469. IEEE, 2024.
+
+\bibitem[Yuan et~al.(2024)Yuan, Duan, Blukis, Pumacay, Krishna, Murali, Mousavian, and Fox]{yuan2024robopoint}
+W.~Yuan, J.~Duan, V.~Blukis, W.~Pumacay, R.~Krishna, A.~Murali, A.~Mousavian, and D.~Fox.
+\newblock Robopoint: A vision-language model for spatial affordance prediction for robotics.
+\newblock \emph{arXiv preprint arXiv:2406.10721}, 2024.
+
+\bibitem[Duan et~al.(2024)Duan, Yuan, Pumacay, Wang, Ehsani, Fox, and Krishna]{duan2024manipulate}
+J.~Duan, W.~Yuan, W.~Pumacay, Y.~R. Wang, K.~Ehsani, D.~Fox, and R.~Krishna.
+\newblock Manipulate-anything: Automating real-world robots using vision-language models.
+\newblock \emph{arXiv preprint arXiv:2406.18915}, 2024.
+
+\bibitem[Tong et~al.(2024)Tong, Liu, Zhai, Ma, LeCun, and Xie]{tong2024eyes}
+S.~Tong, Z.~Liu, Y.~Zhai, Y.~Ma, Y.~LeCun, and S.~Xie.
+\newblock Eyes wide shut? exploring the visual shortcomings of multimodal llms.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 9568--9578, 2024.
+
+\bibitem[Thrush et~al.(2022)Thrush, Jiang, Bartolo, Singh, Williams, Kiela, and Ross]{thrush2022winoground}
+T.~Thrush, R.~Jiang, M.~Bartolo, A.~Singh, A.~Williams, D.~Kiela, and C.~Ross.
+\newblock Winoground: Probing vision and language models for visio-linguistic compositionality.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 5238--5248, 2022.
+
+\bibitem[Yuksekgonul et~al.(2023)Yuksekgonul, Bianchi, Kalluri, Jurafsky, and Zou]{yuksekgonul2023and}
+M.~Yuksekgonul, F.~Bianchi, P.~Kalluri, D.~Jurafsky, and J.~Zou.
+\newblock When and why vision-language models behave like bags-of-words, and what to do about it?
+\newblock In \emph{The Eleventh International Conference on Learning Representations}, 2023.
+
+\bibitem[Hsieh et~al.(2024)Hsieh, Zhang, Ma, Kembhavi, and Krishna]{hsieh2024sugarcrepe}
+C.-Y. Hsieh, J.~Zhang, Z.~Ma, A.~Kembhavi, and R.~Krishna.
+\newblock Sugarcrepe: Fixing hackable benchmarks for vision-language compositionality.
+\newblock \emph{Advances in neural information processing systems}, 36, 2024.
+
+\bibitem[Caron et~al.(2021)Caron, Touvron, Misra, J\'egou, Mairal, Bojanowski, and Joulin]{caron2021emerging}
+M.~Caron, H.~Touvron, I.~Misra, H.~J\'egou, J.~Mairal, P.~Bojanowski, and A.~Joulin.
+\newblock Emerging properties in self-supervised vision transformers.
+\newblock In \emph{Proceedings of the International Conference on Computer Vision (ICCV)}, 2021.
+
+\bibitem[Amir et~al.(2021)Amir, Gandelsman, Bagon, and Dekel]{amir2021deep}
+S.~Amir, Y.~Gandelsman, S.~Bagon, and T.~Dekel.
+\newblock Deep vit features as dense visual descriptors.
+\newblock \emph{arXiv preprint arXiv:2112.05814}, 2\penalty0 (3):\penalty0 4, 2021.
+
+\bibitem[Melas-Kyriazi et~al.(2022)Melas-Kyriazi, Rupprecht, Laina, and Vedaldi]{melas2022deep}
+L.~Melas-Kyriazi, C.~Rupprecht, I.~Laina, and A.~Vedaldi.
+\newblock Deep spectral methods: A surprisingly strong baseline for unsupervised semantic segmentation and localization.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 8364--8375, 2022.
+
+\bibitem[Wang et~al.(2023)Wang, Li, Zhang, Driggs-Campbell, Wu, Fei-Fei, and Li]{wang2023d3fields}
+Y.~Wang, Z.~Li, M.~Zhang, K.~Driggs-Campbell, J.~Wu, L.~Fei-Fei, and Y.~Li.
+\newblock D$^3$fields: Dynamic 3d descriptor fields for zero-shot generalizable robotic manipulation.
+\newblock \emph{arXiv preprint arXiv:2309.16118}, 2023.
+
+\bibitem[Lin et~al.(2023)Lin, So, Mahalingam, Liu, and Abbeel]{lin2023spawnnet}
+X.~Lin, J.~So, S.~Mahalingam, F.~Liu, and P.~Abbeel.
+\newblock Spawnnet: Learning generalizable visuomotor skills from pre-trained networks.
+\newblock \emph{arXiv preprint arXiv:2307.03567}, 2023.
+
+\bibitem[Di~Palo and Johns(2024{\natexlab{a}})]{di2024keypoint}
+N.~Di~Palo and E.~Johns.
+\newblock Keypoint action tokens enable in-context imitation learning in robotics.
+\newblock \emph{arXiv preprint arXiv:2403.19578}, 2024{\natexlab{a}}.
+
+\bibitem[Di~Palo and Johns(2024{\natexlab{b}})]{di2024dinobot}
+N.~Di~Palo and E.~Johns.
+\newblock Dinobot: Robot manipulation via retrieval and alignment with vision foundation models.
+\newblock \emph{arXiv preprint arXiv:2402.13181}, 2024{\natexlab{b}}.
+
+\bibitem[Lee et~al.(2024)Lee, Xie, Fang, Pertsch, and Finn]{lee2024affordance}
+O.~Y. Lee, A.~Xie, K.~Fang, K.~Pertsch, and C.~Finn.
+\newblock Affordance-guided reinforcement learning via visual prompting.
+\newblock \emph{arXiv preprint arXiv:2407.10341}, 2024.
+
+\bibitem[Harris et~al.(2020)Harris, Millman, van~der Walt, Gommers, Virtanen, Cournapeau, Wieser, Taylor, Berg, Smith, Kern, Picus, Hoyer, van Kerkwijk, Brett, Haldane, del R{\'{i}}o, Wiebe, Peterson, G{\'{e}}rard-Marchant, Sheppard, Reddy, Weckesser, Abbasi, Gohlke, and Oliphant]{harris2020array}
+C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, R.~Gommers, P.~Virtanen, D.~Cournapeau, E.~Wieser, J.~Taylor, S.~Berg, N.~J. Smith, R.~Kern, M.~Picus, S.~Hoyer, M.~H. van Kerkwijk, M.~Brett, A.~Haldane, J.~F. del R{\'{i}}o, M.~Wiebe, P.~Peterson, P.~G{\'{e}}rard-Marchant, K.~Sheppard, T.~Reddy, W.~Weckesser, H.~Abbasi, C.~Gohlke, and T.~E. Oliphant.
+\newblock Array programming with {NumPy}.
+\newblock \emph{Nature}, 585\penalty0 (7825):\penalty0 357--362, Sept. 2020.
+\newblock \doi{10.1038/s41586-020-2649-2}.
+\newblock URL \url{https://doi.org/10.1038/s41586-020-2649-2}.
+
+\bibitem[Tedrake(2023)]{underactuated}
+R.~Tedrake.
+\newblock \emph{Underactuated Robotics}.
+\newblock 2023.
+\newblock URL \url{https://underactuated.csail.mit.edu}.
+
+\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy, Cournapeau, Burovski, Peterson, Weckesser, Bright, et~al.]{virtanen2020scipy}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau, E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, et~al.
+\newblock Scipy 1.0: fundamental algorithms for scientific computing in python.
+\newblock \emph{Nature methods}, 17\penalty0 (3):\penalty0 261--272, 2020.
+
+\bibitem[Xiang et~al.(1997)Xiang, Sun, Fan, and Gong]{xiang1997generalized}
+Y.~Xiang, D.~Sun, W.~Fan, and X.~Gong.
+\newblock Generalized simulated annealing algorithm and its application to the thomson model.
+\newblock \emph{Physics Letters A}, 233\penalty0 (3):\penalty0 216--220, 1997.
+
+\bibitem[Kraft(1988)]{kraft1988software}
+D.~Kraft.
+\newblock A software package for sequential quadratic programming.
+\newblock \emph{Forschungsbericht- Deutsche Forschungs- und Versuchsanstalt fur Luft- und Raumfahrt}, 1988.
+
+\bibitem[Fang et~al.(2023)Fang, Wang, Fang, Gou, Liu, Yan, Liu, Xie, and Lu]{fang2023anygrasp}
+H.-S. Fang, C.~Wang, H.~Fang, M.~Gou, J.~Liu, H.~Yan, W.~Liu, Y.~Xie, and C.~Lu.
+\newblock Anygrasp: Robust and efficient grasp perception in spatial and temporal domains.
+\newblock \emph{IEEE Transactions on Robotics}, 2023.
+
+\bibitem[Kirillov et~al.(2023)Kirillov, Mintun, Ravi, Mao, Rolland, Gustafson, Xiao, Whitehead, Berg, Lo, et~al.]{kirillov2023segment}
+A.~Kirillov, E.~Mintun, N.~Ravi, H.~Mao, C.~Rolland, L.~Gustafson, T.~Xiao, S.~Whitehead, A.~C. Berg, W.-Y. Lo, et~al.
+\newblock Segment anything.
+\newblock \emph{arXiv preprint arXiv:2304.02643}, 2023.
+
+\bibitem[Coumans and Bai(2016)]{coumans2016pybullet}
+E.~Coumans and Y.~Bai.
+\newblock Pybullet, a python module for physics simulation for games, robotics and machine learning.
+\newblock 2016.
+
+\bibitem[Zhu et~al.(2022)Zhu, Joshi, Stone, and Zhu]{zhu2022viola}
+Y.~Zhu, A.~Joshi, P.~Stone, and Y.~Zhu.
+\newblock Viola: Imitation learning for vision-based manipulation with object proposal priors.
+\newblock \emph{6th Annual Conference on Robot Learning}, 2022.
+
+\bibitem[Minderer et~al.(2022)Minderer, Gritsenko, Stone, Neumann, Weissenborn, Dosovitskiy, Mahendran, Arnab, Dehghani, Shen, et~al.]{minderer2022simple}
+M.~Minderer, A.~Gritsenko, A.~Stone, M.~Neumann, D.~Weissenborn, A.~Dosovitskiy, A.~Mahendran, A.~Arnab, M.~Dehghani, Z.~Shen, et~al.
+\newblock Simple open-vocabulary object detection with vision transformers.
+\newblock \emph{arXiv preprint arXiv:2205.06230}, 2022.
+
+\bibitem[Cheng et~al.(2023)Cheng, Oh, Price, Lee, and Schwing]{cheng2023putting}
+H.~K. Cheng, S.~W. Oh, B.~Price, J.-Y. Lee, and A.~Schwing.
+\newblock Putting the object back into video object segmentation.
+\newblock In \emph{arXiv}, 2023.
+
+\bibitem[Darcet et~al.(2023)Darcet, Oquab, Mairal, and Bojanowski]{darcet2023vision}
+T.~Darcet, M.~Oquab, J.~Mairal, and P.~Bojanowski.
+\newblock Vision transformers need registers.
+\newblock \emph{arXiv preprint arXiv:2309.16588}, 2023.
+
+\bibitem[Comaniciu and Meer(2002)]{comaniciu2002mean}
+D.~Comaniciu and P.~Meer.
+\newblock Mean shift: A robust approach toward feature space analysis.
+\newblock \emph{IEEE Transactions on pattern analysis and machine intelligence}, 24\penalty0 (5):\penalty0 603--619, 2002.
+
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos, Cournapeau, Brucher, Perrot, and Duchesnay]{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel, M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos, D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830, 2011.
+
+\bibitem[Yang et~al.(2023)Yang, Zhang, Li, Zou, Li, and Gao]{yang2023set}
+J.~Yang, H.~Zhang, F.~Li, X.~Zou, C.~Li, and J.~Gao.
+\newblock Set-of-mark prompting unleashes extraordinary visual grounding in gpt-4v.
+\newblock \emph{arXiv preprint arXiv:2310.11441}, 2023.
+
+\bibitem[Harley et~al.(2022)Harley, Fang, and Fragkiadaki]{harley2022particle}
+A.~W. Harley, Z.~Fang, and K.~Fragkiadaki.
+\newblock Particle video revisited: Tracking through occlusions using point trajectories.
+\newblock In \emph{European Conference on Computer Vision}, pages 59--75. Springer, 2022.
+
+\bibitem[Wang et~al.(2023)Wang, Chang, Cai, Li, Hariharan, Holynski, and Snavely]{wang2023tracking}
+Q.~Wang, Y.-Y. Chang, R.~Cai, Z.~Li, B.~Hariharan, A.~Holynski, and N.~Snavely.
+\newblock Tracking everything everywhere all at once.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, pages 19795--19806, 2023.
+
+\bibitem[Zheng et~al.(2023)Zheng, Harley, Shen, Wetzstein, and Guibas]{zheng2023pointodyssey}
+Y.~Zheng, A.~W. Harley, B.~Shen, G.~Wetzstein, and L.~J. Guibas.
+\newblock Pointodyssey: A large-scale synthetic dataset for long-term point tracking.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, pages 19855--19865, 2023.
+
+\bibitem[Karaev et~al.(2023)Karaev, Rocco, Graham, Neverova, Vedaldi, and Rupprecht]{karaev2023cotracker}
+N.~Karaev, I.~Rocco, B.~Graham, N.~Neverova, A.~Vedaldi, and C.~Rupprecht.
+\newblock Cotracker: It is better to track together.
+\newblock \emph{arXiv preprint arXiv:2307.07635}, 2023.
+
+\bibitem[Doersch et~al.(2023)Doersch, Yang, Vecerik, Gokay, Gupta, Aytar, Carreira, and Zisserman]{doersch2023tapir}
+C.~Doersch, Y.~Yang, M.~Vecerik, D.~Gokay, A.~Gupta, Y.~Aytar, J.~Carreira, and A.~Zisserman.
+\newblock Tapir: Tracking any point with per-frame initialization and temporal refinement.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, pages 10061--10072, 2023.
+
+\bibitem[Doersch et~al.(2024)Doersch, Yang, Gokay, Luc, Koppula, Gupta, Heyward, Goroshin, Carreira, and Zisserman]{doersch2024bootstap}
+C.~Doersch, Y.~Yang, D.~Gokay, P.~Luc, S.~Koppula, A.~Gupta, J.~Heyward, R.~Goroshin, J.~Carreira, and A.~Zisserman.
+\newblock Bootstap: Bootstrapped training for tracking-any-point.
+\newblock \emph{arXiv preprint arXiv:2402.00847}, 2024.
+
+\bibitem[Xiao et~al.(2024)Xiao, Wang, Zhang, Xue, Peng, Shen, and Zhou]{xiao2024spatialtracker}
+Y.~Xiao, Q.~Wang, S.~Zhang, N.~Xue, S.~Peng, Y.~Shen, and X.~Zhou.
+\newblock Spatialtracker: Tracking any 2d pixels in 3d space.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 20406--20417, 2024.
+
+\bibitem[Luiten et~al.(2023)Luiten, Kopanas, Leibe, and Ramanan]{luiten2023dynamic}
+J.~Luiten, G.~Kopanas, B.~Leibe, and D.~Ramanan.
+\newblock Dynamic 3d gaussians: Tracking by persistent dynamic view synthesis.
+\newblock \emph{arXiv preprint arXiv:2308.09713}, 2023.
+
+\bibitem[Millane et~al.(2023)Millane, Oleynikova, Wirbel, Steiner, Ramasamy, Tingdahl, and Siegwart]{millane2023nvblox}
+A.~Millane, H.~Oleynikova, E.~Wirbel, R.~Steiner, V.~Ramasamy, D.~Tingdahl, and R.~Siegwart.
+\newblock nvblox: Gpu-accelerated incremental signed distance field mapping.
+\newblock \emph{arXiv preprint arXiv:2311.00626}, 2023.
+
+\bibitem[Li et~al.(2024)Li, Zhang, Geng, Geng, Long, Shen, Zhang, Liu, and Dong]{li2024manipllm}
+X.~Li, M.~Zhang, Y.~Geng, H.~Geng, Y.~Long, Y.~Shen, R.~Zhang, J.~Liu, and H.~Dong.
+\newblock Manipllm: Embodied multimodal large language model for object-centric robotic manipulation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pages 18061--18070, 2024.
+
+\bibitem[Xia et~al.(2023)Xia, Wang, Pang, Wang, Zhao, and Hu]{xia2023kinematic}
+W.~Xia, D.~Wang, X.~Pang, Z.~Wang, B.~Zhao, and D.~Hu.
+\newblock Kinematic-aware prompting for generalizable articulated object manipulation with llms.
+\newblock \emph{arXiv preprint arXiv:2311.02847}, 2023.
+
+\bibitem[Huang et~al.(2024)Huang, Chang, Liu, Zhu, Dong, Gao, Boularias, and Li]{huang2024a3vlm}
+S.~Huang, H.~Chang, Y.~Liu, Y.~Zhu, H.~Dong, P.~Gao, A.~Boularias, and H.~Li.
+\newblock A3vlm: Actionable articulation-aware vision language model.
+\newblock \emph{arXiv preprint arXiv:2406.07549}, 2024.
+
+\bibitem[Li et~al.(2023)Li, Zhang, Wong, Gokmen, Srivastava, Mart{\'\i}n-Mart{\'\i}n, Wang, Levine, Lingelbach, Sun, et~al.]{li2023behavior}
+C.~Li, R.~Zhang, J.~Wong, C.~Gokmen, S.~Srivastava, R.~Mart{\'\i}n-Mart{\'\i}n, C.~Wang, G.~Levine, M.~Lingelbach, J.~Sun, et~al.
+\newblock Behavior-1k: A benchmark for embodied ai with 1,000 everyday activities and realistic simulation.
+\newblock In \emph{Conference on Robot Learning}, pages 80--93. PMLR, 2023.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin]{vaswani2017attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, {\L}.~Kaiser, and I.~Polosukhin.
+\newblock Attention is all you need.
+\newblock \emph{Advances in neural information processing systems}, 30, 2017.
+
+\bibitem[Goyal et~al.(2023)Goyal, Xu, Guo, Blukis, Chao, and Fox]{goyal2023rvt}
+A.~Goyal, J.~Xu, Y.~Guo, V.~Blukis, Y.-W. Chao, and D.~Fox.
+\newblock Rvt: Robotic view transformer for 3d object manipulation.
+\newblock In \emph{Conference on Robot Learning}, pages 694--710. PMLR, 2023.
+
+\bibitem[Goyal et~al.(2024)Goyal, Blukis, Xu, Guo, Chao, and Fox]{goyal2024rvt}
+A.~Goyal, V.~Blukis, J.~Xu, Y.~Guo, Y.-W. Chao, and D.~Fox.
+\newblock Rvt-2: Learning precise manipulation from few demonstrations.
+\newblock \emph{arXiv preprint arXiv:2406.08545}, 2024.
+
+\bibitem[Dosovitskiy et~al.(2020)Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, et~al.]{dosovitskiy2020image}
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai, T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, et~al.
+\newblock An image is worth 16x16 words: Transformers for image recognition at scale.
+\newblock \emph{arXiv preprint arXiv:2010.11929}, 2020.
+
+\end{thebibliography}

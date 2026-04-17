@@ -1,0 +1,20 @@
+\section{Conclusion \& Limitations}
+In this work, we presented~\algname~(\algabrvname), a structural task representation using constraints that operates on semantic keypoints to specify desired relations between robot arms, object (parts), and other agents in the environment.
+Coupled with point trackers, we demonstrate that \algabrvname constraints can be repeatedly and efficiently solved in a hierarchical optimization framework to act as a closed-loop policy that runs at a real-time frequency.
+We also demonstrate the unique advantage of \algabrvname in that it can be automatically synthesized by large vision models and vision-language models.
+Results are shown on two robot platforms and on a variety of tasks featuring multi-stage, in-the-wild, bimanual, and reactive behaviors, all without task-specific data, additional training, or environment models.
+Despite the promises, several limitations remained.
+First, the optimization framework relies on a forward model of keypoints based on rigidity assumption, albeit a high-frequency feedback loop that relaxes the accuracy requirement of the model.
+Second,~\algabrvname relies on accurate point tracking to correctly optimize actions in closed-loop, which is itself a challenging 3D vision task due to heavy intermittent occlusions.
+Lastly, the current formulation assumes a fixed sequence of stages (i.e., skeletons) for each task.
+Replanning with different skeletons requires running keypoint proposal and VLM at a high-frequency,
+which poses considerable computational challenges.
+An extended discussion of limitations can be found in Appendix~\ref{sec:limitations}.
+
+\label{sec:conclusion}
+
+\acknowledgments{
+This work is partially supported by Stanford Institute for Human-Centered Artificial Intelligence, ONR MURI N00014-21-1-2801, ONR MURI N00014-22-1-2740, and Schmidt Sciences. Ruohan Zhang is partially supported by Wu Tsai Human Performance Alliance Fellowship.
+The bimanual hardware is partially supported by Stanford TML.
+We would like to thank the anonymous reviewers, Albert Wu, Yifan Hou, Adrien Gaidon, Adam Harley, Christopher Agia, Edward Schmerling, Marco Pavone, Yunfan Jiang, Yixuan Wang, Sirui Chen, Chengshu Li, Josiah Wong, Wensi Ai, Weiyu Liu, Mengdi Xu, Yihe Tang, Chelsea Ye, Mijiu Mili, and the members of the Stanford Vision and Learning Lab for fruitful discussions, helps on experiments, and support.
+}

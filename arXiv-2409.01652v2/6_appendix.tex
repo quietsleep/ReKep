@@ -1,0 +1,297 @@
+\appendix
+\newpage
+
+
+\section{Appendix}
+
+\subsection{Pseudo-code for Sequential Manipulation with~\algname}
+\begin{algorithm}[H]
+\caption{\algname for Sequential Manipulation}\label{alg:method}
+\begin{algorithmic}[1]
+\State Initialize current stage $i \gets 1$, and current time $t \gets 1$%
+\While{$i \leq N$}
+    \If{$\exists f \in \mathcal{C}_{\text{path}}^{(i)} \text{ s.t. } f(\bm{k}_t) > 0$}
+        \State $i \gets i-1$ %
+        \State \textbf{continue}
+    \EndIf
+    \If{ $\text{distance}(\mathbf{e}_t, \mathbf{e}_{g_i}) < \epsilon$}
+        \State $i \gets i+1$ %
+        \State \textbf{continue}
+    \EndIf
+    \State Solve sub-goal problem for stage $i$ to obtain $\mathbf{e}_{g_i}$ (Eq.~\ref{eq:subgoal})
+    \State Solve path problem for stage $i$ to obtain $\mathbf{e}_{t:g_i}$ (Eq.~\ref{eq:path})
+    \State Execute the next $m$ actions $\mathbf{e}_{t+1:t+m}$
+    \State $t \gets t + m + 1$
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+\begin{minipage}{.42\textwidth}
+    \begin{center}
+        \includegraphics[width=1.0\linewidth]{media/single-arm.pdf}
+        \captionof{figure}{\small Wheeled Single-Arm Platform.}
+        \label{fig:single}
+    \end{center}
+    \vspace{.5em}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{.58\textwidth}
+    \begin{center}
+        \includegraphics[width=1.0\linewidth]{media/bimanual.pdf}
+        \captionof{figure}{\small Stationary Dual-Arm Platform.}
+        \label{fig:bimanual}
+    \end{center}
+    \vspace{.5em}
+\end{minipage}
+\vspace{-2.3em}
+\end{figure}
+
+\subsection{Wheeled Single-Arm Platform}
+One of our investigated platform is a Franka arm mounted on a wheeled base built with Vention frames (shown in Figure~\ref{fig:single}). Note that the base does not have motors and thus cannot move autonomously, but its mobility nevertheless allows us to investigate the proposed method outside of lab environments.
+
+Since our pipeline produces a sequence of 6-DoF end-effector poses, we use position control in all experiments, which is running at a fixed frequency of $20$ Hz. Specifically, once the robot is given a target end-effector pose in the world frame, we first clip the pose to the pre-defined workspace. Then we linearly interpolate from the current pose to the target pose with a step size of $5$mm for position and $1$ degree for rotation. To move to each interpolated pose, we first calculate inverse kinematics to obtain the target joint positions based on current joint positions (IK solver from PyBullet~\cite{coumans2016pybullet}). Then we use the joint impedance controller from Deoxys~\cite{zhu2022viola} to reach to the target joint positions.
+
+Two RGB-D cameras, Orbbec Femto Bolt, are mounted on each side of the robot facing the workspace center. The cameras capture RGB images and point clouds at a fixed frequency of $20$ Hz.
+
+\subsection{Stationary Dual-Arm Platform}
+We also investigate the method on a stationary dual-arm platform consisting of two Franka arms mounted in front of a tabletop workspace (shown in Figure~\ref{fig:bimanual}). We share the same controller as the wheeled single-arm platform with the exception that the two arms are controlled simultaneously at $20$ Hz. Specifically, our pipeline jointly solves two 6-DoF end-effector pose sequences, which are sent to the low-level controller together. The controller subsequently calculates IK for both arms and moves the arms using joint impedance control.
+
+Three RGB-D cameras, Orbbec Femto Bolt, are mounted on this platform. Two cameras are mounted on the left and right sides and one camera is mounted in the back. The cameras similarly capture RGB images and point clouds at a fixed frequency of $20$ Hz.
+
+\subsection{Evaluation Details}\label{app:tasks}
+
+Below we discuss the evaluation details for the experiments reported in Section~\ref{sec:result} and Section~\ref{sec:generalization}.
+
+\subsubsection{Details for In-the-Wild and Bimanual Manipulation (Section~\ref{sec:result})}
+For each task, 10 initial different configurations of objects are selected, which cover the full workspace but are manually verified to ensure they are kinematically feasible for the robot. For each trial, a human operator restores the scene to the corresponding configuration and initiates the system. Due to the challenge of developing automatic success criteria for the diverse set of objects and environments investigated in this work, success rates are measured by the operator with the criterion reported under each task description below. For experiments involving external disturbances, the set of disturbances for all trials is pre-selected, and one disturbance is applied to each trial. Specifically, the disturbance is introduced by a human operator using hands to change the object's pose. Collision checking is disabled for all tasks involving deformable objects.
+
+\textbf{Pour Tea}: The environment consists of a teapot and a cup placed on a counter table in a kitchen setting. The task involves three stages: grasping the handle, aligning the teapot to the top of the cup, and pouring the tea into the cup. The success criterion requires that the teapot remains upright until the pouring stage, and at the end, the spout must be aligned and tilted on top of the cup opening.
+
+\textbf{Recycle Can}: The environment includes one of three types of cans (Coke, Zero Coke, Zero Sprite), a recycle bin with a narrow opening (such that the cans may only go in when they are upright), a landfill bin, and a compost bin, all situated inside an office building. The task involves two stages: grasping the can and reorienting it on top of the recycle bin before dropping it. The success criterion is that the can is successfully thrown into the bin.
+
+\textbf{Stow Book}: The environment consists of a target book placed on a side table and a real-size bookshelf with a 15cm opening among the placed books, all inside an office environment. The task involves two stages: grasping the target book on the side and stowing it inside the opening in the shelf. The success criterion is that the target book is placed steadily after the robot releases the gripper, and the robot must not bump into the shelf or other placed books.
+
+\textbf{Tape Box}: The environment includes a cardboard box, a packaging tape with a dispenser sitting on top of the box that already has one side taped, and a human user collaborating with the robot. The tape has already been unrolled to be enough for taping because unrolling typically requires a large force that exceeds the limit of the robot arm. The task involves two stages: while a human operator is squeezing the box, the robot needs to grasp the tape and align it to the correct side to complete the taping. The success criterion is that the tape must end up in the correct position such that it is aligned with the seam.
+
+\textbf{(Bimanual) Fold Garment}: The environment consists of a sweater placed flat close to the workspace center, with small deformations on the sleeves, neck, and bottom. The task typically requires four stages: grasping both sleeves, folding them to the middle, grasping the neck, and folding it to the bottom. The success criterion does not enforce consistent stages; as long as the sweater is folded such that it occupies at most half of the original surface size, it is regarded as a success.
+
+\textbf{(Bimanual) Pack Shoes}: The environment includes an empty shoe box placed close to the workspace center, with two shoes placed on opposite sides of the box in random poses. The task involves two stages: grasping the shoes simultaneously and placing them in the shoe box. The success criterion does not enforce consistent stages; as long as the shoes are placed into the box without being stacked together or causing bimanual self-collision, it is considered successful.
+
+\textbf{(Bimanual) Collaborative Folding}: The environment consists of a large blanket (pre-folded to an appropriate size that occupies about 70\% of the workspace due to its size exceeding the workspace limit) and a human user collaborating with the robot. The task involves two stages: the robot must grasp the two corners of the blanket opposite to the human user, and the second stage is aligning the two corners with the two corners that the human has grasped. The success criterion is that the robot has grasped the correct corners and can align them with the correct human arms (left-left, right-right).
+
+\subsubsection{Details on Baseline Methods}
+We use VoxPoser~\cite{huang2023voxposer} as the main baseline method as it makes similar assumptions that no task-specific data or pre-defined motion primitives are required.
+We adapt VoxPoser to our setting with certain modifications to ensure fairness in comparisons. Specifically, we use the same VLM, GPT-4o~\cite{openai2023gpt}, that takes the same camera input. We also augment the original prompt from the paper with the prompt used in this work to ensure it has sufficient context.
+We only use the affordance, rotation, and gripper action value maps and ignore the avoidance and velocity value maps because they are not necessary for our tasks.
+We also only consider the scenario where the ``entity of interest'' is the robot end-effector instead of objects in the scene. The latter is tailored for pushing task, which is not being studied in this work.
+We use OWL-ViT~\cite{minderer2022simple} for open-vocabulary object detection, SAM~\cite{kirillov2023segment} for initial-frame segmentation, and Cutie~\cite{cheng2023putting} for mask tracking.
+
+\subsubsection{Details for Generalization in Manipulation Strategies (Section~\ref{sec:generalization})}
+The dual-arm robot is tasked with folding eight different categories of clothing. We use two metrics for evaluation: ``Strategy Success'' and ``Execution Success,'' where the former evaluates whether keypoints are proposed and constraints are written appropriately, and the latter evaluates the robotic system's execution given successful strategies.
+
+To evaluate ``Strategy Success,'' the garment is initialized close to the center of the workspace. A back-mounted RGB-D camera captures the RGB image. Then, the keypoint proposal module generates keypoint candidates using the captured image, which are then overlaid on top of the original image with numerical marks $\{0, \ldots, K-1\}$. The overlaid image, along with the same generic prompt, is fed into GPT-4~\cite{openai2023gpt} to generate the \algabrvname constraints. Since folding garments is itself an open-ended problem without ground-truth strategies, we manually judge if the proposed keypoints and the generated constraints are correct. Note that since the constraints are to be executed by a bimanual robot, and the constraints are almost always connecting (folding) two keypoints such that they are aligned, correctness is measured by whether it is (potentially) executable by the robot without causing self-collision (arms crossing over to opposite sides) and whether the folding strategy can fold the garment to at most half of its original surface area.
+
+To evaluate ``Execution Success,'' we take the generated strategies in the previous section that are marked as successful for each garment and execute the sequence on the dual-arm platform, with a total of 10 trials for each garment. Point tracking is disabled as we observe that our point tracker predicts unstable tracks when the garment is potentially folded many times. Success is measured by whether the garment is folded such that its surface area is at most half of its original surface area.
+
+\subsection{Implementation Details of Keypoint Proposal}\label{app:proposal}
+Herein we describe how keypoint candidates in a scene are generated.
+For each platform, we use one of the mounted RGB-D cameras to capture an image of size ${h \times w \times 3}$, depending on which camera has the best holistic view of the environment, as all the keypoints need to be present in the first frame for the proposed method.
+Given the captured image, we first use DINOv2 with registers (ViT-S14)~\cite{darcet2023vision,oquab2023dinov2} to extract the patch-wise features $\mathbf{F}_{\text{patch}} \in \mathbb{R}^{h' \times w' \times d}$.
+Then we perform bilinear interpolation to upsample the features to the original image size, $\mathbf{F}_{\text{interp}} \in \mathbb{R}^{h \times w \times d}$.
+To ensure the proposal covers all relevant objects in the scene, we extract all masks $\mathbf{M} = \{\mathbf{m}_1, \mathbf{m}_2, \ldots, \mathbf{m}_n\}$ in the scene using Segment Anything (SAM)~\cite{kirillov2023segment}.
+Within each mask $\mathbf{m}_i$, we apply PCA to project the features to three dimensions, $\mathbf{F}_{\text{PCA}} = \text{PCA}(\mathbf{F}_{\text{resized}}[\mathbf{m}_i], 3)$.
+We find that applying PCA improves the clustering as it often removes details and artifacts related to texture that are not useful for our tasks. 
+For each mask $j$, we cluster the masked features $\mathbf{F}_{\text{interp}}[\mathbf{m}_j]$ using $k$-means with $k=5$ with the Euclidean distance metric.
+The median centroids of the clusters are used as keypoint candidates, which are projected to a world coordinate $\mathbb{R}^3$ using a calibrated RGB-D camera.
+Note that we also store which keypoint candidates originate from the same mask, which is later used as part of the rigidity assumption in the optimization loops described in Sec.~\ref{sec:algorithm}.
+Candidates outside of the workspace bounds are filtered out.
+To avoid many points cluttered in a small region, we additionally use Mean Shift~\cite{comaniciu2002mean,scikit-learn} (with a bandwidth $8$cm) to filter out points that are close to each other.
+Finally, the centroids are taken as final candidates.
+Alternatively, one may develop a pipeline using only segmentation models~\cite{kirillov2023segment,yang2023set}, but we leave comparisons to future work.
+
+\subsection{Querying Vision-Language Model}\label{app:prompt}
+
+After we obtain the keypoint candidates, they are overlaid on the captured RGB image with numerical marks $\{0, \ldots, K-1\}$. Then the image and the task instruction are fed into a vision-language model with the prompt described below. The prompt contains only generic instructions with no image-text in-context examples, although a few text-based examples are given to concretely explain the proposed method and the expected output from the model. Note that the majority of the investigated tasks are not discussed in the provided prompt. As a result, the VLM is tasked with generating~\algabrvname constraints by leveraging its internalized world knowledge.
+
+For the experiments conducted in this work, we use GPT-4o~\cite{openai2023gpt} as it is one of the latest available models at the time of the experiments. However, due to rapid advancement in this field, the pipeline can directly benefit from newer models that have better vision-language reasoning.
+Correspondingly, we observe different models exhibit different behaviors when given the same prompt (with the observation that newer models typically require less fine-grained instructions).
+As a result, instead of developing the best prompt for the suite of tasks in this work, we focus on demonstrating a full-stack pipeline consisting a key component that can be automated and continuously improved by future development.
+
+\lstinputlisting{prompt.md}
+
+\subsection{Implementation Details of Point Tracker}\label{app:tracker}
+We implement a simple point tracker following~\cite{wang2023d3fields} based on DINOv2 (ViT-S14)~\cite{oquab2023dinov2} that leverages the fact that multiple RGB-D cameras are present and DINOv2 is efficient to run at a real-time frequency.
+
+At initialization, an array of 3D keypoint positions $\bm{k} \in \mathbb{R}$ are given.
+We first take the RGB-D captures from each present camera.
+For each RGB image, we obtain the pixel-wise DINOv2 features following the same procedure in Section~\ref{app:proposal} and record their associated 3D world coordinates using calibrated cameras.
+For each 3D keypoint positions, we aggregate all the features from points that are within $2$cm from all the cameras. The mean of the aggregated features is recorded as the reference feature for each keypoint, which is kept fixed throughout the task.
+
+After initialization, at each time step, we similarly obtain the pixel-wise features from DINOv2 from all cameras with their 3D world coordinates.
+To track the keypoints, we calculate cosine similarity between features across all pixels and the reference features. The top $100$ matches are selected for each keypoint with a cutoff similarity of $0.6$. We then reject outliers for the selected matches by calculating median deviation ($m=2$). Additionally, as the tracked keypoints may oscillate in a small region, we apply a uniform filter with a window size of $10$ in the end. The entire procedure runs at a fixed frequency of $20$ Hz.
+
+Note that the implemented point tracker is a simplification from~\cite{wang2023d3fields} for real-time tracking. We refer readers to~\cite{wang2023d3fields} for more comprehensive discussion on using self-supervised vision models, such as DINOv2, for point tracking.
+Alternatively, more specialized point trackers can be used~\cite{harley2022particle,wang2023tracking,zheng2023pointodyssey,karaev2023cotracker,doersch2023tapir,doersch2024bootstap,xiao2024spatialtracker,luiten2023dynamic}.
+
+\subsection{Implementation Details of Sub-Goal Solver}\label{app:subgoal}
+The sub-goal problems are implemented and solved using SciPy~\cite{virtanen2020scipy}.
+The decision variable is a single end-effector pose (position and Euler angles) in $\mathbb{R}^6$ for single-arm robots and two end-effector poses in $\mathbb{R}^{12}$ for bimanual robot.
+The bounds for the position terms are the pre-defined workspace bounds, and the bounds for the rotation terms are that the half hemisphere where the end-effector faces down (due to the joint limits of the Franka arm, it is often likely to reach joint limit when an end-effector pose faces up).
+The decision variables are normalized to $[-1, 1]$ based on the bounds.
+For the first solving iteration, the initial guess is chosen to be the current end-effector pose.
+We use sampling-based global optimization Dual Annealing~\cite{xiang1997generalized} in the first iteration to quickly search the full space, which is followed by a gradient-based local optimizer SLSQP~\cite{kraft1988software} that refines the solution.
+The full procedure takes around 1 second for this iteration.
+In subsequent iterations, we use the solution from previous stage and only use local optimizer as it can quickly adjust to small changes.
+The optimization is cut off with a fixed time budget represented as number of objective function calls to keep the system running at a high frequency.
+
+We discuss the cost terms in the objective function below.
+
+\textbf{Constraint Violation}:
+We implement constraints as cost terms in the optimization problem, where the returned costs by the~\algabrvname functions are multiplied with large weights.
+
+\textbf{Scene Collision Avoidance}:
+We use nvblox~\cite{millane2023nvblox} with the PyTorch wrapper~\cite{sundaralingam2023curobo} to compute the ESDF of the scene in a separate node that runs at 20 Hz. The ESDF calculation aggregates the depth maps from all available cameras and excludes robot arms using cuRobo and any grasped rigid objects (tracked via a masked tracker model Cutie~\cite{cheng2023putting}). A collision voxel grid is then calculated using the ESDF and used by other modules in the system. In the sub-goal solver module, we first downsample the gripper points and the grasped object points to have a maximum of 30 points using farthest point sampling. Then we calculate the collision cost using the ESDF voxel grid with linear interpolation with a threshold of $15$cm.
+
+\textbf{Reachability}:
+Since our decision variables are end-effector poses, which may not be always reachable by the robot arms, especially in confined spaces, we need to add a cost term that encourages finding solutions with valid joint configurations. Therefore, we solve an IK problem in each iteration of the sub-goal solver using PyBullet~\cite{coumans2016pybullet} and use its residual as a proxy for reachability. We find that this takes around 40\% of the time of the full objective function. Alternatively, one may solve the problem in joint space, which would ensure the solution is within the joint limits by enforcing the bounds.
+We find that this is inefficient with our Python-based implementation as we need to calculate forward kinematics for a magnitude of more times in the path solver, because the constraints are evaluated in the task space.
+To address this while ensuring efficiency, future works can consider using hardware-accelerated implementations to solve the problems in joint space~\cite{sundaralingam2023curobo}.
+
+\textbf{Pose Regularization}:
+We also add a small cost that encourages the sub-goal to be close to the current end-effector pose.
+
+\textbf{Consistency}:
+Since the solver iteratively solves the problem at a high frequency and the noise from the perception pipeline may propagate to the solver, we find it useful to include a consistency cost that encourages the solution to be close to the previous solution.
+
+\textbf{(Dual-Arm only) Self-Collision Avoidance}:
+To avoid two arms collide with each other, we compute the pairwise distance between the two point sets, each including the gripper points and grasped object points.
+
+\subsection{Implementation Details of Path Solver}\label{app:path}
+The path problems are implemented and solved using SciPy~\cite{virtanen2020scipy}.
+The number of decision variables is calculated based on the distance between the current end-effector pose and the target end-effector pose.
+Specifically, we define a fixed step size ($20$cm and $45$ degree) and linearly approximate the desired number of ``intermediate poses'', which are used as decision variables.
+As in the sub-goal problem, they are similarly represented using position and Euler angles with the same bounds.
+For the first solving iteration, the initial guess is chosen to be linear interpolation between the start and the target.
+We similarly use sampling-based global optimization followed by a gradient-based local optimizer in the first iteration and only use local optimizer in subsequent iterations.
+After we obtain the solution, represented as a number of intermediate poses, we fit a spline using the current pose, the intermediate poses, and the target pose, which are then densely sampled to be executed by the robot.
+
+In the objective function, we first unnormalize the decision variables and use piecewise linear interpolation to obtain a dense sequence of discrete poses to represent the path (referred to as ``dense samples'' below). A spline interpolation would be aligned with how we postprocess and execute the solution, but we find linear interpolation to be computationally more efficient. Below we discuss the individual cost terms in the objective function.
+
+\textbf{Constraint Violation}:
+Similar to that in the sub-goal problem, we check violation of the \algabrvname constraints for each dense sample along the path and penalize with large weights.
+
+\textbf{Scene Collision Avoidance}:
+The calculation is similar to the sub-goal problem, except that it is calculated for each dense sample. We ignore the collision calculation with a $5$cm radius near the start and the target poses, as this tends to stabilize the solution when solved at a high frequency due to various real-world noises. We additionally add a table clearance cost that penalizes the path from penetrating the table (or the bottom of the workspace for the wheeled single-arm robot).
+
+\textbf{Path Length}:
+We approximate the path length using the dense samples by taking the sum of their differences. Shorter paths are encouraged.
+
+\textbf{Reachability}:
+We solve an IK problem for each intermediate pose inside the objective function as in the sub-goal problem. See the sub-goal solver section for more details.
+
+\textbf{Consistency}:
+As in the sub-goal problem, we encourage the solution to be close to the previous one. Specifically, we store the dense samples from the previous iteration. To calculate the solution consistency, we use the pairwise distance between the two sequences (treated as two sets) as an efficient proxy. Alternatively, Hausdorff distance can be used.
+
+\textbf{(Dual-Arm only) Self-Collision Avoidance}:
+We similarly compute self-collision avoidance for the dual-arm platform as in the sub-goal problem. We also use pairwise distance between the two sequences to efficiently calculate this cost.
+
+\subsection{Comparisons with Prior Works on Visual Prompting for Manipulation}\label{sec:concurrent}
+
+There has been several concurrent works investigating the application of visual prompting of VLMs to robotic manipulation~\cite{nasiriany2024pivot,huang2024copa,liu2024moka,yuan2024robopoint,lee2024affordance}. Below we summarized the differences to highlight the contributions of this work.
+
+\textbf{Task DoF}: In this work, we focus on challenging tasks that require 6 DoF (single arm) or 12 DoF (two arms) motions. However, this is not trivial for existing VLMs which operate on 2D images – as quoted from MOKA~\cite{liu2024moka}, ``current VLMs are not capable of reliably predicting 6-DoF motions'' and PIVOT~\cite{nasiriany2024pivot}, ``generalizing to higher dimensional spaces such as rotation poses even additional challenges''. To tackle this, one key insight from ReKep is that VLMs only need to implicitly specify full 3D rotations by reasoning about keypoints in \emph{(x, y, z) Cartesian coordinates}. After this, actual 3D rotations are solved by high-precision and efficient numerical solvers, effectively sidestepping the challenge of explicitly predicting 3D rotations. As a result, the same formulation also naturally generalizes to controlling multiple arms.
+
+\textbf{High-Level Planning}: While many works also consider multi-stage tasks via an language-based task planners which are independent from their methods, our formulation takes inspiration from TAMP and organically integrates high-level task planning with low-level actions in a unified continuous mathematical program. As a result, the method can naturally consider \emph{geometric dependencies} across stages and do so \emph{at a real-time frequency}. When a failure occurs, it would backtrack to a previous stage in which its conditions can still be satisfied. For example, in the ``pouring tea'' task, the robot can only start tilting the teapot when the teapot spout is aligned with the cup opening. However, if the cup is being moved in the process, it should level the teapot and re-align with the cup. Or if the teapot is being taken from the gripper, it should instead re-grasp the teapot.
+
+\textbf{Low-Level Execution}: A common issue with using VLMs is that it is computationally expensive to run, hindering the high-frequency perception-action feedback loops often required for many manipulation tasks. As a result, most of existing works either consider the open-loop settings where visual perception is only used in the beginning or only consider the tasks where slow execution is acceptable. Instead, our formulation natively supports a high-frequency perception-action loops by coupling VLMs with a point tracker, which effectively enables reactive behaviors via closed-loop execution despite leveraging very large foundation models.
+
+\textbf{Visual Prompting Methods}: We uniquely consider using visual prompting for code-generation, where code may contain arbitrary arithmetic operations on a set of keypoints via visual referring expressions. Although a single point is limiting to capture complex geometric structure, multiple points and their relations can even specify \emph{vectors}, \emph{surfaces}, \emph{volumes}, and their \emph{temporal dependencies}. While being conceptually simple, this offers a much higher degree of flexibility which can fully specify 6 DoF or even 12 DoF motions.
+
+\subsection{Extended Discusssions on Limitations}\label{sec:limitations}
+
+Herein we present additional limitations of the existing system.
+
+\textbf{Prompting and Robustness}: Although we have demonstrated that existing VLMs possess rudimentary capabilities at specifying~\algabrvname constraints, we have observed that when dealing with tasks that span many stages with several temporally dependent constraints (\ref{sec:breakfast}), the VLMs lack enough robustness to obtain consistent success.
+
+\textbf{Task-Space Planning}: To enable efficient planning, in this work we only consider planning in the task space with the end-effector poses as decision variables. However, we have observed that in certain scenarios, it may be kinematically challenging for robots to achieve the optimized poses as the solver does not explicitly account for the kinematics of the robot. Planning in joint space can likely resolve the issue but we find it to be less computationally efficient for our tasks.
+
+\textbf{Articulated Object Manipulation}: In this work, we do not investigate tasks involving articulated objects, as we observed this requires advanced spatial reasoning capabilities that are beyond those of existing VLMs. However, the ReKep formulation may be extended to such tasks by representing different types of joints also by ``relations of keypoints''. For example, ReKep constraints can be written to constrain certain keypoints to move only alongside a line (prismatic joints) or a curve (revolute joints). To extend to these scenarios, finetuning may be required as in~\cite{li2024manipllm,xia2023kinematic,huang2024a3vlm}.
+
+\textbf{Bimanual Coordination}: Although we demonstrate the application of~\algabrvname to bimanual manipulation, we also identify several important limitations in this domain. Notably, the challenges can be roughly categorized into those pertaining to semantic reasoning of keypoint relations by the VLM and those pertaining to solving for bimanual motions by the optimization solver.
+For semantic reasoning, to achieve bimanual folding, the VLM needs to possess certain spatial knowledge about which steps should/can be performed together by both arms. For example, the bottom of a shirt often needs to be grasped by two hands, each at one corner, in order to fold it upwards to align with the collar. Another example in blanket folding is to recognize that the bottom-left corner should be aligned with the top-left corner and the bottom-right corner should be aligned with the top-right corner, as other matching may lead to self-collision.
+For optimization solver, as bimanual motion planning dramatically increases the search space of possible motions, which slows down the overall pipeline and more frequently produces less optimal behaviors.
+
+\subsection{Simulation Experiments}
+
+We additionally implement~\algabrvname in OmniGibson~\cite{li2023behavior} for the \textit{Pour Tea} task. It is compared to a monolithic learning-based baseline based on the transformer architecture~\cite{vaswani2017attention} adopted from RVT~\cite{goyal2023rvt,goyal2024rvt}. The baseline is trained via imitation learning on 100 expert demonstrations, where demonstrations are from scripted policies using privileged simulation information. Success rates are averaged across 100 trials and reported below. Although the monolithic policy excels in training scenarios given its access to expert demonstrations, we observe that~\algabrvname performs significantly stronger in unseen settings, and more importantly, without the need of expert demonstrations.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \footnotesize
+         & Seen Poses & Unseen Poses & Unseen Objects\\
+        \midrule
+        Monolithic Policy & \textbf{0.93} & 0.31 & 0.14   \\
+        \algabrvname (Zero-Shot) & 0.75  & \textbf{0.68} & \textbf{0.72} \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:sim}
+\end{table}
+
+\subsection{Comparisons of Visual Feature Extractors for Keypoint Proposal}
+
+Herein we provide qualitative comparisons of different methods for keypoint proposal.
+We compare three pre-trained visual feature extractors, each of which represents a popular class of pre-training methods: DINOv2~\cite{oquab2023dinov2} (self-supervised pre-training), CLIP~\cite{radford2021learning} (vision-language contrastive pre-training), and ViT~\cite{dosovitskiy2020image} (supervised pre-training).
+We also compare to a variant that does not use Segment Anything (SAM)~\cite{kirillov2023segment} for its objectness prior.
+In Fig.~\ref{fig:proposal}, we show the extracted feature maps (projected to RGB space) and their clustered keypoints for three different scenes.
+
+We would like to note two important observations from the comparisons: 1) objectness prior given by SAM is critical to constrain the keypoint proposal on objects in the scene instead of on the background, and 2) while most visual foundation models can provide useful guidance, DINOv2 produces sharper features that can better distinguish fine-grained regions of an object. The first observation can be clearly made by comparing the last column with other candidate methods. The second observation can be made by noting the following places: 1) the unique cyan color on the cup handle in the first scene, 2) the unique colors of the box panels in the second scene, and 3) the blue/green contrast of the top panel and the side panel in the third scene. Similarly, CLIP provides different features between different object parts, but the features are less sharp than those of DINOv2 (color saturating from one part to the other). ViT, on the other hand, produces least distinguishable features between object parts, especially when texture is similar. In general, our observations are aligned with other works that also apply DINOv2 for its fine-grained object understanding~\cite{di2024keypoint,tong2024eyes,wang2023d3fields}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{media/keypoint-proposal-comparison.pdf}
+    \caption{\small Comparisons of different methods for keypoint proposal.}
+    \label{fig:proposal}
+\end{figure}
+
+\newpage
+\subsection{Case Study of Long-Horizon Tasks}\label{sec:breakfast}
+
+To stress test the presented system, we additionally perform a case study of a long-horizon bimanual task of preparing breakfast tray. A successful completion requires 10 stages: 1) grasp table cloth, 2) place table cloth inside the tray, 3) grasp bread from the plate, 4) place bread on top of the table cloth, 5) grasp mug and teacup simultaneously with two arms, 6) align mug and teapot, 7) pour tea into the mug, 8) place the mug inside the tray, 9) grasp the two tray handles simultaneously with two arms, and 10) lift up the tray and hand it to the human operator.
+
+This task presents significant challenges for many components in the system. Specifically, we find that existing pipeline for keypoint proposal and constraint specification are incapable of generating the full set of correct keypoints and the full sequence of the correct \algabrvname constraints. Additionally, we observe that as a result of multiple present objects, our point tracker is incapable of consistently tracking all required keypoints in the scene. As a result, we resort to manually annotated keypoints and constraints, as well as keypoint detection at only the start of each stage instead of persistent keypoint tracking. With the above modifications, we find that the system can reasonably perform the task. The initial and final configurations are shown below. The solutions for each stage are shown on the next page. The video result is available at \website.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{media/breakfast-task.pdf}
+    \caption{\small Initial configuration and successful final configuration of the preparing breakfast tray task.}
+    \label{fig:breakfast-task}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{media/breakfast-viz.pdf}
+    \caption{\small Solution visualization of the preparing breakfast tray task.}
+    \label{fig:breakfast-viz}
+\end{figure}
+
+

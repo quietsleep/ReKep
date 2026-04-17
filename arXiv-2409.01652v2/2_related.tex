@@ -1,0 +1,44 @@
+\section{Related Works}
+\label{sec:related}
+
+\textbf{Structural Representations for Manipulation.}
+Structural representations determine the orchestration of different modules in a manipulation system and yield different implications on the capabilities, assumptions, efficiency, and effectiveness of the system.
+Rigid-body poses are most commonly used given well-understood rigid-body motions in free space and their efficiency at modeling long-range dependencies of objects~\cite{kaelbling2010hierarchical,kaelbling2013integrated,srivastava2014combined,byravan2017se3,dantam2018incremental,migimatsu2020object,garrett2021integrated,curtis2022long,labbe2022megapose,tyree20226,pan2023tax,wen2023foundationpose}.
+However, since it often requires both geometry and dynamics of environment to be modeled beforehand, various works have studied structural representations using data-driven methods, such as learning object-centric representation~\cite{lenz2015deepmpc,chang2016compositional,battaglia2016interaction,sanchez2018graph,jang2018grasp2vec,tremblay2018deep,xu2019densephysnet,mao2019neuro,burgess2019monet,hewing2020learning,locatello2020object,heravi2023visuomotor,zhu2023learning,yuan2022sornet,cheng2023nod,hsu2024s}, particle-based dynamics~\cite{li2018learning,lin2022planning,wang2023dynamic,shi2023robocook,lin2022learning,abou2024physically,bauer2024doughnet}, and keypoints or descriptors~\cite{schmidt2016self,florence2018dense,manuelli2019kpam,kulkarni2019unsupervised,qin2020keto,sundaresan2020learning,manuelli2020keypoints,chen2021unsupervised,simeonov2022neural,simeonov2023se,vecerik2023robotap,chun2023local,bahl2023affordances,wen2023any,bharadhwaj2024track2act}.
+Among them, keypoints have shown great promises given their interpretability, efficiency, generalization to instance variations~\cite{manuelli2019kpam}, and ability to model both rigid bodies and deformable objects.
+However, manual annotation is required per task, thus lacking scalability in open-world settings, which we aim to address in this work.
+
+
+
+
+
+
+\textbf{Constrained Optimization in Manipulation.}
+Constraints are often used to impose desired behaviors on robots. Motion planning algorithms use geometric constraints to compute feasible trajectories that avoid obstacles and achieve goals~\cite{kingston2018sampling,ratliff2009chomp,schulman2014motion,sundaralingam2023curobo,marcucci2024shortest,ratliff2018riemannian}.
+Contact constraints can be used to plan forceful or contact-rich behaviors~\cite{posa2016optimization,mordatch2012discovery,mordatch2012contact,posa2014direct,howell2022predictive,liu2024model,lynch1996stable,hou2018fast,sleiman2023versatile,yang2024dynamic,graesdal2024towards,yunt2006trajectory,yunt2007combined,yunt2011augmented}.
+For sequential manipulation tasks, task and motion planning (TAMP) \cite{kaelbling2010hierarchical,kaelbling2013integrated,garrett2021integrated} is a widely used framework, often formulated as constraint satisfaction problems~\cite{lagriffoul2012constraint,lagriffoul2014efficiently,lozano2014constraint,dantam2018incremental,yang2023compositional,silver2021learning,vu2024coast} with continuous geometric problems as subroutines.
+Logic-Geometric Programming \cite{toussaint2015logic,toussaint2017multi,toussaint2018differentiable,ha2020probabilistic,xue2023d,driess2020deep} alternatively formulates a nonlinear constrained program over the entire state trajectory, taking into account both logical and geometric constraints.
+Constraints can either be manually written or learned from data in the form of manifolds~\cite{sutanto2021learning}, feasibility model \cite{driess2020deep,yang2022sequence}, or signed-distance fields~\cite{driess2022learning,camps2022learning}.
+Inspired by \cite{toussaint2022sequence}, we formulate sequential manipulation tasks as an integrated \emph{continuous} mathematical program that is repeatedly solved in a receding-horizon fashion, with the key difference being that the constraints are synthesized by foundation models.
+
+
+
+\textbf{Foundation Models for Robotics. }
+Leveraging foundation models for robotics is an active area of research.
+We refer readers to~\cite{hu2023toward,firoozi2023foundation,kawaharazuka2024real,yang2023foundation} for overview and recent applications.
+Here, we focus on VLMs that are capable of incorporating visual inputs~\cite{radford2021learning,ramesh2021zero, li2022blip,achiam2023gpt,li2023blip,openai2023gpt} for manipulation.
+However, despite showing promises for open-world planning and goal specification~\cite{huang2024copa,liu2024moka,nasiriany2024pivot,hu2023look,du2023video,hong20233d,chen2024spatialvlm,huang2023voxposer,brohan2023rt,gao2023physically,wang2024grounding,hsu2023ns3d,gao2024physically,yuan2024robopoint,duan2024manipulate}, the caption-guided pretraining scheme of VLMs often limits visual details that can be retained about the image~\cite{tong2024eyes,thrush2022winoground,yuksekgonul2023and,hsieh2024sugarcrepe}.
+Self-supervised vision models (e.g., DINO~\cite{caron2021emerging, oquab2023dinov2}), on the other hand, provide fine-grained pixel-level features useful for various vision and robotic tasks~\cite{amir2021deep,melas2022deep,wang2023d3fields,zhu2023learning,lin2023spawnnet,di2024keypoint,di2024dinobot}, but there lack effective ways for interpreting open-world semantics pivotal for cross-task generalization.
+In this work, we leverage their complementary strengths by using DINOv2~\cite{oquab2023dinov2} for fine-grained keypoint proposal and using GPT-4o~\cite{openai2023gpt} for its visual reasoning capability in a supported output modality (code). %
+Similar forms of visual prompting techniques are also explored in concurrent works~\cite{huang2024copa,liu2024moka,nasiriany2024pivot,yuan2024robopoint,lee2024affordance}.
+In this work, we demonstrate~\algabrvname possesses the unique advantages of performing challenging 6-12 DoF tasks, integrated high-level reasoning for reactive replanning, high-frequency closed-loop execution, and generating black-box constraints via visual prompting. More discussion in Appendix~\ref{sec:concurrent}.
+
+
+
+
+
+
+
+
+
+

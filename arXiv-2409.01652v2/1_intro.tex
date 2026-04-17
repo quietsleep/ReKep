@@ -1,0 +1,29 @@
+\section{Introduction}
+
+Robotic manipulation involves intricate interactions with objects in the environment, which can often be expressed as constraints in both spatial and temporal domains.
+Consider the task of pouring tea into a cup in Fig.~\ref{fig:teaser}: the robot must grasp \emph{at the handle}, keep the cup \emph{upright} while transporting it, \emph{align} the spout with the target container, and then tilt the cup \emph{at the correct angle} to pour.
+Here, the constraints encode not only the intermediate sub-goals (e.g., align the spout) but also the transitioning behaviors (e.g., keep the cup \emph{upright} in transportation), which collectively dictate the spatial, timing, and other combinatorial requirements of the robot's actions in relation to the environment.
+
+However, effectively formulating these constraints for a large variety of real-world tasks presents significant challenges.
+While representing constraints using relative poses between robots and objects is a direct and widely-used approach~\cite{kaelbling2010hierarchical}, rigid-body transformations do not depict geometric details, require obtaining object models \textit{a priori}, and cannot work on deformable objects.
+On the other hand, data-driven approaches enable learning constraints directly in visual space~\cite{driess2022learning,simeonov2022neural}. While more flexible, it remains unclear how to effectively collect training data as the number of constraints grows combinatorially in terms of objects and tasks.
+Therefore, we ask the question: how can we represent constraints in manipulation that are 1) widely applicable: adaptable to tasks that require multi-stage, in-the-wild, bimanual, and reactive behaviors, 2) scalably obtainable: have the potential to be fully automated through the advances in foundation models, and 3) real-time optimizable: can be efficiently solved by off-the-shelf solvers to produce complex manipulation behaviors?
+
+In this work, we propose~\textbf{\algname~(\algabrvname)}.
+Specifically,~\algabrvname represents constraints as Python functions that map a set of keypoints to a numerical cost, where each keypoint is a task-specific and semantically meaningful 3D point in the scene.
+Each function is composed of (potentially nonlinear) arithmetic operations on the keypoints and encodes a desired ``relation'' between them, where the keypoints may belong to different entities in the environment, such as the robot arms, object parts, and other agents.
+While each keypoint only consists of its 3D Cartesian coordinates in the world frame, multiple keypoints can collectively specify lines, surfaces, and/or 3D rotations if rigidity between keypoints is enforced.
+We study~\algabrvname in the context of the sequential manipulation problem, where each task involves multiple stages that have spatio-temporal dependencies (e.g., ``grasping'', ``aligning'', and ``pouring'' in the aforementioned example).
+
+
+
+While constraints are typically defined manually per task~\cite{manuelli2019kpam},
+we demonstrate the specific form of~\algabrvname possesses a unique advantage in that they can be automated by pre-trained large vision models (LVM)~\cite{oquab2023dinov2} and vision-language models (VLM)~\cite{openai2023gpt}, enabling \emph{in-the-wild} specification of~\algabrvname from RGB-D observations and free-form language instructions.
+Specifically, we leverage LVM to propose fine-grained and semantically meaningful keypoints in the scene and VLM to write the constraints as Python functions from visual input overlaid with proposed keypoints.
+This process can be interpreted as grounding fine-grained spatial relations, often those not easily specified with natural language, in an output modality supported by VLM (code) using visual referral expressions.
+
+With the generated constraints, off-the-shelf solvers can be used to produce robot actions by re-evaluating the constraints based on tracked keypoints. Inspired by~\cite{toussaint2022sequence}, we employ a hierarchical optimization procedure to first solve a set of waypoints as sub-goals (represented as $SE(3)$ end-effector poses) and then solve the receding-horizon control problem to obtain a dense sequence of actions to achieve each sub-goal.
+With appropriate instantiation of the problem, we demonstrate that it can be reliably solved at approximately 10 Hz for the tasks considered in this work.
+
+
+Our contributions are summarized as follows: 1) We formulate manipulation tasks as a hierarchical optimization problem with~\algname; 2) We devise a pipeline to automatically specify keypoints and constraints using large vision models and vision-language models; 3) We present system implementations on two real-robot platforms that take as input a language instruction and RGB-D observations, and produce multi-stage, in-the-wild, bimanual, and reactive behaviors for a large variety of manipulation tasks, all without task-specific data or environment models. 

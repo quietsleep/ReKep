@@ -1,0 +1,116 @@
+\documentclass{article}
+\PassOptionsToPackage{sort&compress}{natbib}
+
+\usepackage[table]{xcolor}
+\usepackage{hhline}
+\usepackage{xspace}
+\usepackage{todonotes}
+\usepackage{algorithm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{siunitx}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{inconsolata}
+\usepackage{xcolor}
+\usepackage{bbding}
+\usepackage{amsfonts}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{amsmath,bm}
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{courier} %
+\lstset{
+  basicstyle=\ttfamily\tiny\fontfamily{pcr}\selectfont, %
+  backgroundcolor=\color[HTML]{f8f8f8}, %
+  frame=single,
+  rulecolor=\color{gray},
+  breaklines=true,
+}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\definecolor{blue}{HTML}{38B3DC}
+\definecolor{orange}{HTML}{f6c8a8}
+\definecolor{red}{HTML}{e89da0}
+\definecolor{green}{HTML}{8FBA95}
+
+\definecolor{rebuttal}{HTML}{f57842}
+
+\newcommand{\rebuttal}[1]{\textcolor{rebuttal}{#1}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+\usepackage[final]{corl_2024}
+
+\newcommand{\mypar}[1]{\vspace{-10pt}\paragraph{#1}}
+
+\newcommand{\website}{\href{https://rekep-robot.github.io/}{rekep-robot.github.io}}
+\newcommand{\algname}{Relational Keypoint Constraints\xspace}
+\newcommand{\algabrvname}{ReKep\xspace}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\title{\algabrvname: Spatio-Temporal Reasoning of~\algname for Robotic Manipulation}
+
+\author{
+  Wenlong Huang$^1$, Chen Wang$^{1*}$, Yunzhu Li$^{2*}$, Ruohan Zhang$^1$, Li Fei-Fei$^1$\\
+  $^1$Stanford University \quad $^2$Columbia University\\
+  \vspace{0.5em}
+  \website
+}
+
+
+\begin{document}
+\maketitle
+
+\vspace{-2.2em}
+
+\begin{abstract}
+    Representing robotic manipulation tasks as constraints that associate the robot and the environment is a promising way to encode desired robot behaviors.
+    However, it remains unclear how to formulate the constraints such that they are 1) versatile to diverse tasks, 2) free of manual labeling, and 3) optimizable by off-the-shelf solvers to produce robot actions in real-time.
+    In this work, we introduce \textbf{\algname~(\algabrvname)}, a visually-grounded representation for constraints in robotic manipulation.
+    Specifically, \algabrvname is expressed as Python functions mapping a set of 3D keypoints in the environment to a numerical cost.
+    We demonstrate that by representing a manipulation task as a sequence of~\algname, we can employ a hierarchical optimization procedure to solve for robot actions (represented by a sequence of end-effector poses in $SE(3)$) with a perception-action loop at a real-time frequency.
+    Furthermore, in order to circumvent the need for manual specification of~\algabrvname for each new task, we devise an automated procedure that leverages large vision models and vision-language models to produce~\algabrvname from free-form language instructions and RGB-D observations.
+    We present system implementations on a wheeled single-arm platform and a stationary dual-arm platform that can perform a large variety of manipulation tasks, featuring multi-stage, in-the-wild, bimanual, and reactive behaviors, all without task-specific data or environment models.
+\blfootnote{*Denotes equal contribution. Correspondence to Wenlong Huang \textless wenlongh@stanford.edu\textgreater.}
+\end{abstract}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{media/teaser.pdf}
+    \vspace{-0.5em}
+    \caption{\small \textbf{{\algname}~(\algabrvname)}
+    specify diverse manipulation behaviors as an optimizable spatio-temporal series of constraint functions operating on semantic keypoints.
+    In the pouring task, one~\algabrvname first constrains the grasping location at the handle of the teapot (\textit{blue}). A subsequent~\algabrvname pulls the teapot spout (\textit{red}) towards the top of the cup opening (\textit{green}) while another~\algabrvname constrains the desired rotation of the teapot by associating the vector formed by the handle (\textit{blue}) and the spout (\textit{red}).
+    }
+    \label{fig:teaser}
+    \vspace{-1.65em}
+\end{figure}
+
+
+\input{1_intro}
+\input{2_related}
+\input{3_method}
+\input{4_exp}
+\input{5_conclusion}
+
+\bibliography{main}
+
+\input{6_appendix}
+
+\end{document}
